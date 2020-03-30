@@ -6,6 +6,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[spanish, english]{babel}
 \usepackage[left=3cm,right=3cm,bottom=3.5cm,top=3.5cm]{geometry}
+\usepackage[usenames]{color}
+\usepackage{hyperref}
 
 %%% footnotes
 \usepackage{sepfootnotes} %http://ctan.dcc.uchile.cl/macros/latex/contrib/sepfootnotes/sepfootnotes.pdf
@@ -18,7 +20,7 @@
 %%%% CARATULA
 
 \def\autor{Ing. Sebastian Ezequiel Jaremczuk}
-\def\tituloTesis{Deserción en Carreras de Ingeniería: \vspace{.2cm} \\ Análisis y Descubrimiento de posibles causas}
+\def\tituloTesis{Deserción en Carreras de Ingeniería: \vspace{.2cm} Análisis y Descubrimiento de posibles causas}
 \def\runtitulo{Deserción en Carreras de Ingeniería: Análisis de posibles causas}
 
 \def\director{Juan Carlos Gómez}
@@ -59,13 +61,15 @@
 %-------------------------------------------------%
 \subsection{Información general del dominio}
 %-------------------------------------------------%
-\input{secciones/informacion_del_dominio}
+\input{secciones/informacion_general_del_dominio}
 %-------------------------------------------------%
 \subsection{Definir Objetivos}
 %-------------------------------------------------%
+\input{secciones/definir_objetivos}
 %-------------------------------------------------%
 \subsection{Definir el criterio de éxito}
 %-------------------------------------------------%
+\input{secciones/definir_el_criterio_de_exito}
 %-------------------------------------------------%
 %-------------------------------------------------%
 \section{Evaluar la situación}
@@ -73,12 +77,15 @@
 %-------------------------------------------------%
 \subsection{Recursos}
 %-------------------------------------------------%
+\input{secciones/recursos}
 %-------------------------------------------------%
 \subsection{Requerimientos, supuestos, condicionantes}
 %-------------------------------------------------%
+\input{secciones/requerimientos_supuestos_condicionantes}
 %-------------------------------------------------%
 \subsection{Condiciones de riesgo y contingencias}
 %-------------------------------------------------%
+\input{secciones/condiciones_de_riesgo_y_contingencias}
 %-------------------------------------------------%
 \subsection{terminología}
 %-------------------------------------------------%
@@ -93,6 +100,7 @@
 %-------------------------------------------------%
 \subsection{Determinar los objetivos}
 %-------------------------------------------------%
+\input{secciones/definir_objetivos}
 %-------------------------------------------------%
 \subsection{Definir el criterio de éxito}
 %-------------------------------------------------%
@@ -100,13 +108,14 @@
 %-------------------------------------------------%
 \section{Producir el plan del proyecto}
 %-------------------------------------------------%
+\input{secciones/producir_plan_proyecto}
 %-------------------------------------------------%
 \subsection{Redacción del proyecto}
 %-------------------------------------------------%
 %-------------------------------------------------%
 \subsection{Evaluación inicial de técnicas y herramientas}
 %-------------------------------------------------%
-
+\input{secciones/evaluacion_inicial_tecnicas_y_herramientas}
 
 %%%% DATOS
 %-------------------------------------------------%
@@ -208,6 +217,7 @@
 %-------------------------------------------------%
 \section{Próximos pasos}
 %-------------------------------------------------%
+\input{secciones/proximos_pasos}
 %-------------------------------------------------%
 \subsection{Lista de posibles acciones}
 %-------------------------------------------------%
@@ -244,6 +254,7 @@ Informe de descripción de datos
 
 %%%% BIBLIOGRAFIA
 \backmatter
-%\bibliography{tesis}
+\bibliographystyle{amsplain}
+\bibliography{referencias}
 
 \end{document}
