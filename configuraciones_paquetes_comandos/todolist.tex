@@ -1,0 +1,12 @@
+
+%\usepackage{todonotes} % si se pone este, no se puede poner el customizado de abajo
+
+%%% todolist
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+\usepackage[colorinlistoftodos,prependcaption ]{todonotes} % dentro de corchetes puede ir tmb: ,textsize=tiny 
+\newcommandx{\todorevisar}[2][1=]{\todo[inline, linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\todocambiar}[2][1=]{\todo[inline, linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\todoinfo}[2][1=]{\todo[inline, linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\todomejorar}[2][1=]{\todo[inline, linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommandx{\comentarioinvisible}[2][1=]{\todo[disable,#1]{#2}}

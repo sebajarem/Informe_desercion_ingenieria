@@ -9,11 +9,14 @@
 \usepackage[usenames]{color}
 \usepackage{hyperref}
 
-%%% footnotes
-\usepackage{sepfootnotes} %http://ctan.dcc.uchile.cl/macros/latex/contrib/sepfootnotes/sepfootnotes.pdf
-\newfootnotes{b}
-\input{footnotes}
-%%%
+%configuraciones especiales de paquetes
+\input{configuraciones_paquetes_comandos/todolist}
+\input{configuraciones_paquetes_comandos/footnotes}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
@@ -49,6 +52,11 @@
 \pagestyle{headings}
 
 %%%% CONTENIDO DE LA TESIS
+
+\todorevisar{revisar. ejemplo de todolist}
+\todocambiar{cambiar. ejemplo de todolist}
+\todoinfo{info. ejemplo de todolist}
+\todomejorar{mejorar. ejemplo de todolist}
 
 
 %%%% DOMINIO
@@ -89,10 +97,11 @@
 %-------------------------------------------------%
 \subsection{terminología}
 %-------------------------------------------------%
+\input{secciones/terminologia}
 %-------------------------------------------------%
 \subsection{Determinar costos y beneficios}
 %-------------------------------------------------%
-
+\input{secciones/determinar_costos_y_beneficios}
 %-------------------------------------------------%
 %-------------------------------------------------%
 \section{Objetivos de data mining}
@@ -104,6 +113,7 @@
 %-------------------------------------------------%
 \subsection{Definir el criterio de éxito}
 %-------------------------------------------------%
+\input{secciones/definir_el_criterio_de_exito}
 %-------------------------------------------------%
 %-------------------------------------------------%
 \section{Producir el plan del proyecto}
@@ -112,6 +122,7 @@
 %-------------------------------------------------%
 \subsection{Redacción del proyecto}
 %-------------------------------------------------%
+\input{secciones/redaccion_del_proyecto}
 %-------------------------------------------------%
 \subsection{Evaluación inicial de técnicas y herramientas}
 %-------------------------------------------------%
@@ -124,33 +135,38 @@
 %-------------------------------------------------%
 \section{Colección inicial de datos}
 %-------------------------------------------------%
+\input{secciones/coleccion_inicial_datos}
 %-------------------------------------------------%
 \section{Describir los datos}
 %-------------------------------------------------%
+\input{secciones/describir_los_datos}
 %-------------------------------------------------%
 \section{Exploración de datos}
 %-------------------------------------------------%
 %-------------------------------------------------%
 \section{Verificar la calidad de los datos}
 %-------------------------------------------------%
-
+\input{secciones/verificar_calidad_de_los_datos}
 %-------------------------------------------------%
 \section{Preparación de los datos}
 %-------------------------------------------------%
 %-------------------------------------------------%
 \section{Obtener / Seleccionar el conjunto inicial de datos}
 %-------------------------------------------------%
+\input{secciones/seleccionar_conjunto_inicial_de_datos}
 %-------------------------------------------------%
 \section{Limpiar datos}
 %-------------------------------------------------%
+\input{secciones/limpiar_datos}
 %-------------------------------------------------%
 \section{Construir datos}
 %-------------------------------------------------%
 %-------------------------------------------------%
 \subsection{Crear atributos derivados}
 %-------------------------------------------------%
+\input{secciones/crear_atributos_derivados}
 %-------------------------------------------------%
-\subsection{Crear nuevos registros}
+\subsection{Crear nuevos registros} % nuevas filas u observaciones
 %-------------------------------------------------%
 %-------------------------------------------------%
 \subsection{Aplicar transformaciones}
@@ -158,6 +174,7 @@
 %-------------------------------------------------%
 \section{Integración de los datos}
 %-------------------------------------------------%
+\input{secciones/integracion_de_los_datos}
 %-------------------------------------------------%
 \section{Formateo de los datos}
 %-------------------------------------------------%
@@ -256,5 +273,11 @@ Informe de descripción de datos
 \backmatter
 \bibliographystyle{amsplain}
 \bibliography{referencias}
+
+\todocambiar{cambiar mas adelnate esta referencia de CRISP-DM por la del manual, pero está buena porque explica que poner enc ada seccion}
+\href{https://www.ibm.com/support/knowledgecenter/es/SS3RA7_sub/modeler_crispdm_ddita/clementine/crisp_help/crisp_overview_container.html}{crispdm}
+
+%%%% TODO LIST
+\listoftodos
 
 \end{document}

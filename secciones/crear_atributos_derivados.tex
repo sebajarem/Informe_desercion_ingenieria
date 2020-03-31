@@ -1,0 +1,68 @@
+\subsubsection{Definición de la Clase Desertor}
+
+Como se explicó en la sección \ref{seccion:desercion}, no existe una definición única y completamente abarcativa del fenómeno de la deserción. 
+Por lo tanto para comenzar en esta línea de investigación interna, se decidió realizar una definición propia a los efectos de que sea calculable a partir de los datos con los que se disponen en la  Base de Datos de la Universidad. \textbf{Se optó por clasificar como desertor a quienes tuviesen dos o más años de inactividad total, esto es sin cursadas, ni finales.}
+
+Esta clasificación fue realizada mediante el script "Desertores corregidos.ipynb" generando el archivo de salida "alumnos\_desertores.csv"
+
+\todomejorar{ver si se puede poner una imagen con diagrama de flujo que lo ilustre}
+
+
+\subsubsection{Variables nuevas}
+\todomejorar{cuando se haga el análisis descriptivo del tablón baseline2009, mejorar estas definiciones}
+Referidas a estudios anteriores al universitario.
+\textbf{EsTécnico:} una variable categórica con 3 estados.
+\begin{itemize}
+\item 1: viene de colegio técnico
+\item 0: no viene de colegio técnico
+\item nulo: no se tiene información
+\end{itemize}
+
+\vspace{3mm}
+
+Referidas al estudio Universitario en curso
+\textbf{Edad al ingreso:} variable cuantitativa. Cálculo: año de ingreso a la universidad - año de nacimiento.
+
+\vspace{3mm}
+
+\textbf{Turno:} variable cuantitativa. se genera una variable (o columna) por cada turno y su contenido es la cantidad de materias cursadas en ese turno.
+
+\vspace{3mm}
+
+\textbf{Tipo de aprobación:} variable cuantitativa. Se genera una columna por cada tipo de aprobación existente y su contenido es la cantidad de materias aprobadas por esa modalidad.
+
+\vspace{3mm}
+
+\textbf{Cantidad de veces recursada regular:} variable cuantitativa. Su contenido es la suma de la cantidad de veces que recurso materias en general.
+
+\vspace{3mm}
+
+\textbf{Descripción de Recursada:} variable cuantitativa. Existe una variable por cada número de intento de cursada de materia. Cada una de estas variables contiene la suma de materias que el alumno recursó la cantidad de veces que indica el nombre de la variable.
+
+\vspace{3mm}
+
+\textbf{Promedio sobre los máximos de nota:} variable cuantitativa. Su contenido es el valor promedio que tiene el alumno únicamente tomando solo 1 nota por materia y esta nota es la mas alta. (se excluyen los desaprobados o notas aprobadas de la misma materia si son mas bajas -caso de que el alumno haya rendido el final nuevamente a pesar de haber aprobado para subir su promedio-)
+
+\vspace{3mm}
+
+\textbf{Promedio sobre todas las notas:} variable cuantitativa. Su contenido es el promedio tomando en cuenta todas las notas que existen en el registro de los finales. (se incluyen los aplazos)
+
+\vspace{3mm}
+
+\textbf{Cantidad de veces que aprobó:} variable cuantitativa.
+
+\vspace{3mm}
+
+\textbf{Cantidad de veces que no aprobó:} variable cuantitativa.
+
+\vspace{3mm}
+
+\textbf{cantidad de veces que promocionó:} variable cuantitativa.
+
+\vspace{3mm}
+
+
+
+\todocambiar{cambiar de seccion el parraque que sigue hacia trabajos futuros o análisis dsps de la etapa de modelado}
+Por supuesto que para una mejor comprensión del fenómeno será necesario interactuar con grupos de otras disciplinas (ciencias sociales) y también considerar el diseño y  la incorporación de nuevos datos para un mejor análisis, lo cual se pretende hacer en trabajos futuros.
+
