@@ -1,0 +1,17 @@
+# agrego archivos que no se tienen que subir para no molestar la sincronización con overleaf
+
+*.bat
+*.gz
+*.aux
+*.log
+*.bbl
+*.blg
+*.lot
+*.tcp
+*.toc
+*.lof
+
+*.pdf
+*.out
+*.tdo
+
