@@ -1,16 +1,14 @@
-\todo[inline, color=red]{reredactar y combinar con los notebooks de juoyter}
+\comentarioinvisible[inline, color=red]{en estaa seccion, va toda la limpieza que se hizo, incluyendo que se hizo con los datos perdidos, errores, incoherencias de codificación y metadatos ausentes}
 
-Limpieza
-Como parte del proceso de limpieza de la base de datos se realizaron, entre otros:
+Como se mencionó en el apartado de exploración \ref{exploracion_datos} y calidad de datos \ref{calidad_datos}, los datos iniciales son buenos aunque puede mejorarse.\\
+El proceso de limpieza tiene como entrada las 3 tablas mencionadas en la sección de colección inicial de datos \ref{datos:raw}. Como parte de este proceso, se realizaron las siguientes acciones:
 \begin{itemize}
 \item La unificación de los nombres de las materias ya que figuran con distintas denominaciones y a su vez son distintas a los nombres que figuran en el plan de la materia.
 \item La restricción de los datos a los alumnos que tienen cursadas y finales en el periodo analizado. 
-\item La corrección de las materias que tenían notas mayores a 10. 
+\item La corrección de las materias que tenían notas mayores a 10. Que según un análisis realizado se llegó a la conclusión de que eran errores de tipeo y corresponde la máxima nota. por lo que se imputó el valor en 10. 
 \item Corrección de registros con diferentes errores de formato.
 \item Eliminación de registros con errores groseros que no hay posibilidad para corregirlos.
-\item Entre otras incoherencias (algunas ya mencionadas en los informes exploratorios y de calidad) \todorevisar{recordar poner esto en los informes exploratorios cuando analice los archivos de base}
 \end{itemize}
 
-El proceso de limpieza tiene como entrada las 3 tablas mencionadas en la sección de colección inicial de datos \ref{datos:raw}
 
 

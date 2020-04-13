@@ -1,5 +1,46 @@
-\todo[inline, color=red]{revisar si dejar todo o no. Recordar que no es hacer descriptivo con dlookr sino que es descripción de los campos}
+\comentarioinvisible{Recordar que no es hacer descriptivo con dlookr sino que es descripción de los campos}
 
+
+En las tablas \ref{tab:tabla_Dataset_Alumnos}, \ref{tab:tabla_Dataset_Cursadas} y \ref{tab:tabla_Dataset_Finales} puede observarse una mínima descripción sobre la cantidad y con que tipo de información se tiene. 
+
+\vspace{3mm}
+
+\input{tablas/alumnos_describe_campos.tex}
+
+\input{tablas/cursadas_describe_campos.tex}
+
+\input{tablas/finales_describe_campos.tex}
+
+\vspace{3mm}
+
+Como puede observarse, algunos campos en primera instancia están categorizadas como tipo de dato \textit{character}, cuando en realidad algunos deberían ser del tipo \textit{numeric} o \textit{factor}.
+Esto puede deberse a posibles errores que aparecen en los contenidos de dichos campos o malas transformaciones realizadas previo a que recibir estos datos. Estos temas se tratarán en los siguientes puntos.
+\\
+Si bien el nombre de algunos campos explican bien el contenido que tienen, algunas pueden llegar a no ser tan claras y a continuación se procede a explicarlas.
+
+
+\begin{enumerate}
+	\item Tabla Cursadas
+	\begin{enumerate}
+		\item Departamento: Una carrera tiene un plan de estudio compuesto por materias. Estas se dictan en distintos Departamentos, la gran mayoría son del departamento de la carrera que se está cursando pero también hay materias que dependen de otro departamento como lo son por ejemplo las de ciencias básicas.
+		\item Modalidad: indica en que momento del año se cursa, cuatrimestras o anual generalmente.
+		\item Turno: existen 3 momentos del día para dictar una materia, mañana, tarde y noche.
+		\item Ciclo.Lectivo.de.Cursada: año en el que se cursó la materia que hace referencia.
+		\item Tipo.de.aprobación: a pesar de hacer referencia a la aprobación, este campo también indica si en el momento que se tomó el registro estaba cursando o no había firmado la materia.
+		\item Cantidad.de.veces.recursada.regular: indica el número actual (al momento de tomar ese registro) por el que el alumno esta recursando la materia de referencia.
+		\item Descripción.de.recursada.regular: descripción del significado del registro anterior.
+	\end{enumerate}
+	\item Tabla Finales
+	\begin{enumerate}
+		\item Aprobado: flag si aprobó o no
+		\item Promociono: flag si promocionó o no
+	\end{enumerate}
+\end{enumerate}
+
+
+
+
+\comentarioinvisible{
 El contenido de la base de datos se puede clasificar como sigue:
 -Datos personales:
 Código Alumno*; Nacionalidad; Sexo, Localidad; Provincia;
@@ -12,3 +53,4 @@ regular, Cantidad de veces recursada libre, Descripción de
 recursada libre.
 -Datos de Finales:
 Código Alumno, Materia, Año, Nota, Aprobado, Promocionó
+}

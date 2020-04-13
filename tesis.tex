@@ -13,12 +13,14 @@
 \input{configuraciones_paquetes_comandos/todolist}
 \input{configuraciones_paquetes_comandos/footnotes}
 
-
+%configuraciones para tablas
+\input{configuraciones_paquetes_comandos/tablas.tex}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
+
 
 %%%% CARATULA
 
@@ -57,6 +59,9 @@
 \todocambiar{cambiar. ejemplo de todolist}
 \todoinfo{info. ejemplo de todolist}
 \todomejorar{mejorar. ejemplo de todolist}
+
+
+\input{pruebas.tex}
 
 
 %%%% DOMINIO
@@ -141,36 +146,43 @@
 %-------------------------------------------------%
 \input{secciones/describir_los_datos}
 %-------------------------------------------------%
-\section{Exploración de datos}
+\section{Exploración de datos}\label{exploracion_datos}
 %-------------------------------------------------%
+\input{secciones/exploracion_de_datos.tex}
 %-------------------------------------------------%
-\section{Verificar la calidad de los datos}
+\section{Verificar la calidad de los datos}\label{calidad_datos}
 %-------------------------------------------------%
 \input{secciones/verificar_calidad_de_los_datos}
 %-------------------------------------------------%
-\section{Preparación de los datos}
+
+%%%$ DATOS PREPARACION
 %-------------------------------------------------%
+\chapter{Preparación de los datos}
+%-------------------------------------------------%
+\input{secciones/preparacion_de_datos.tex}
 %-------------------------------------------------%
 \section{Obtener / Seleccionar el conjunto inicial de datos}
 %-------------------------------------------------%
 \input{secciones/seleccionar_conjunto_inicial_de_datos}
 %-------------------------------------------------%
-\section{Limpiar datos}
+\section{Limpiar datos}\label{limpiar_datos}
 %-------------------------------------------------%
 \input{secciones/limpiar_datos}
 %-------------------------------------------------%
 \section{Construir datos}
 %-------------------------------------------------%
 %-------------------------------------------------%
-\subsection{Crear atributos derivados}
+\subsection{Crear atributos derivados}\label{atributos_derivados}
 %-------------------------------------------------%
 \input{secciones/crear_atributos_derivados}
 %-------------------------------------------------%
 \subsection{Crear nuevos registros} % nuevas filas u observaciones
 %-------------------------------------------------%
+\input{secciones/crear_nuevos_registros.tex}
 %-------------------------------------------------%
 \subsection{Aplicar transformaciones}
 %-------------------------------------------------%
+\input{secciones/aplicar_transformaciones.tex}
 %-------------------------------------------------%
 \section{Integración de los datos}
 %-------------------------------------------------%
@@ -178,7 +190,7 @@
 %-------------------------------------------------%
 \section{Formateo de los datos}
 %-------------------------------------------------%
-
+\input{secciones/formateo.tex}
 
 %%%% MODELADO
 %-------------------------------------------------%
@@ -267,7 +279,8 @@ Informe de descripción de datos
 \section{Revisión del proyecto}
 %-------------------------------------------------%
 
-
+\todocambiar{cambiar de seccion el parraque que sigue hacia trabajos futuros o análisis dsps de la etapa de modelado}
+Por supuesto que para una mejor comprensión del fenómeno será necesario interactuar con grupos de otras disciplinas (ciencias sociales) y también considerar el diseño y  la incorporación de nuevos datos para un mejor análisis, lo cual se pretende hacer en trabajos futuros.
 
 %%%% BIBLIOGRAFIA
 \backmatter

@@ -1,11 +1,31 @@
-\todorevisar{explicar porque se sacaron o sino nisiquiera poner que estan en los archivos originales esos campos}
-se decidieron sacar los siguientes campos
+\comentarioinvisible{aca van si se seleccionan para trabajar (o sacar que es lo mismo) sacan Columnas o filas y porque. 
+	Explicar porque se sacaron o sino ni siquiera poner que estan en los archivos originales esos campos}
+
+Debido a la poca varianza de algunos campos, por lo que no aportan mucha información, sumado al hecho de que son datos que no se fueron actualizando con el tiempo sino que fue completado una única vez, se decidió sacarlos del alcance inicial de este trabajo.\\
+
+En la tabla de alumnos se exluyen los siguientes campos:
 \begin{itemize}
-\item pais
-\item localidad
-\item provincia
-\item estado civil
+\item Pais
+\item Localidad
+\item Provincia
+\item Estado.Civil
 \end{itemize}
 
+A su vez, hay otros campos que por el momento no se utilizan ni para usarlos ni transformarlos, por lo que también se decididó sacarlos.
+Por este motivo, en la tabla de cursadas, se excluye el siguiente campo:
+\begin{itemize}
+	\item cursos
+	\item Materia (ya que el análisis se centrará principalmente en detectar desertores y no identificar Materias dificultosas, aunque puede ser un segundo estudio a efectuar) \todoinfo{poner en trabajos futuros}
+	\item Departamento
+	\item Ciclo Lectivo (aunque se usa para generar los filtros que se mencionan en limpieza \ref{limpiar_datos}
+	\item Modalidad
+\end{itemize}
 
+Por este mismo motivo también se excluyen campos de la tabla de finales.
+\begin{itemize}
+	\item Materia
+	\item Año (aunque se utiliz como filtro para seleccionar registros del período de análisis)
+\end{itemize}
+
+Por otro lado, las filas se utilizarán todas las que sea posible sin excluir del análisis ninguna en particular. Se tratará de incluir toda la información 8excepto las columnas mencionadas) en un solo tablón.
 
