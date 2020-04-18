@@ -97,4 +97,55 @@ print("2ndo chunk")
 %\end{verbatim}
 
 
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+variable & tipo\tabularnewline
+\midrule
+\endhead
+codigo.alumno & character\tabularnewline
+tipo\_de\_aprobacion\_libre & double\tabularnewline
+tipo\_de\_aprobacion\_cambio\_curso & double\tabularnewline
+tipo\_de\_aprobacion\_promociono & double\tabularnewline
+edad\_al\_ingreso & double\tabularnewline
+tipo\_de\_aprobacion\_no\_firmo & double\tabularnewline
+ciclo\_lectivo\_de\_cursada & double\tabularnewline
+tipo\_de\_aprobacion\_firmo & double\tabularnewline
+cantidad\_de\_veces\_resursada\_regular & double\tabularnewline
+descripción\_de\_recursada\_regular\_No\_Recurso & double\tabularnewline
+descripción\_de\_recursada\_regular\_Recurso1vez & double\tabularnewline
+descripción\_de\_recursada\_regular\_Recurso2vez & double\tabularnewline
+descripción\_de\_recursada\_regular\_Recurso3vez & double\tabularnewline
+descripción\_de\_recursada\_regular\_Recurso4vez & double\tabularnewline
+descripción\_de\_recursada\_regular\_Recurso5vez & double\tabularnewline
+descripción\_de\_recursada\_regular\_RecursoNveces &
+double\tabularnewline
+EsTecnico & character\tabularnewline
+deserto & character\tabularnewline
+Sexo & character\tabularnewline
+Turno\_Tarde & double\tabularnewline
+Turno\_Noche & double\tabularnewline
+Turno\_Mañana & double\tabularnewline
+Aprobado & double\tabularnewline
+Promociono & double\tabularnewline
+noAprobado & double\tabularnewline
+Nota & double\tabularnewline
+Nota\_max\_prom & double\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{lstlisting}[language=R]
+# estadisticos_calidad(datos = baseline,
+#                      variables_excluir = c("codigo.alumno"),
+#                      generar_xlsx = F)
+# 
+# estadisticos_categoricos(datos = baseline,
+#                          variables_excluir = c("codigo.alumno"),
+#                          generar_xlsx = F,
+#                          top = 3)
+# 
+# estadisticos_numericos(datos = baseline,
+#                        variables_excluir = c("codigo.alumno"),
+#                        generar_xlsx = F)
+\end{lstlisting}
+
 
