@@ -11,5 +11,133 @@ A continuación de presenta una muestra aleatoria pero invertiremos las filas po
 
 \todorevisar{vale la pena hacer estadisticos aca ? ahora son todos numericos (la mayoria)}
 
+\subsection{Exploración de datos Integrados}
+
+\hypertarget{anuxe1lisis-estaduxedstico}{%
+	\subsubsection{Análisis Estadístico}\label{anuxe1lisis-estaduxedstico}}
+
+A continuación se realiza un breve análisis estadístico sobre como
+quedan los campos en el tablón ``Baseline\_2009'' después de la
+integración de la información, agregación de campos y campos calculados:
+
+\input{tablas/tablon_est_cal.tex}
+
+\input{tablas/tablon_est_cat.tex}
+
+\input{tablas/tablon_est_num1.tex}
+
+\input{tablas/tablon_est_num2.tex}
+
+
+\clearpage
+
+\hypertarget{dataset-supervisado-valores-en-funciuxf3n-de-la-clase}{%
+	\subparagraph{Dataset Supervisado: Valores en función de la
+		clase}\label{dataset-supervisado-valores-en-funciuxf3n-de-la-clase}}
+
+Como es un dataset supervisado, podría ser interesante ver los valores
+separados por clase. Por lo tanto el dataset y con el objeto solamente
+de realizar un análisis exploratorio, se divide según la clase y se
+realizan los estadísticos nuevamente.
+
+\input{tablas/tablon_no_deserto_est_cal.tex}
+
+\input{tablas/tablon_no_deserto_est_cat.tex}
+
+\input{tablas/tablon_no_deserto_est_num1.tex}
+
+\input{tablas/tablon_no_deserto_est_num2.tex}
+
+\input{tablas/tablon_deserto_est.tex}
+
+
+
+
+%\includegraphics{Analisis_tablon_baseline_2009_files/figure-latex/unnamed-chunk-12-1.pdf}
+%\includegraphics{Analisis_tablon_baseline_2009_files/figure-latex/unnamed-chunk-12-2.pdf}
+%\includegraphics{Analisis_tablon_baseline_2009_files/figure-latex/unnamed-chunk-12-3.pdf}
+
+
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics{imagenes/imagenes/gg_explo_tablon_grupo.png}
+	%\includegraphics[width=0.25\textwidth]{mesh}
+	\caption{Análisis Univariado por grupos}
+	\label{fig:tablon_boxplot_grupo}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics{imagenes/imagenes/gg_explo_tablon_tipo_aprob.png}
+	%\includegraphics[width=0.25\textwidth]{mesh}
+	\caption{Análisis Univariado por Tipo de Aprobación}
+	\label{fig:tablon_boxplot_tipoAprobacion}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics{imagenes/imagenes/gg_explo_tablon_tipo_recur.png}
+	%\includegraphics[width=0.25\textwidth]{mesh}
+	\caption{Análisis Univariado por tipo de resursada}
+	\label{fig:tablon_boxplot_tipoRecursada}
+\end{figure}
+
+\clearpage
+
+\hypertarget{observaciones}{%
+	\paragraph{Observaciones}\label{observaciones}}
+
+De las tablas y gráficos anteriores podemos extraer la siguiente
+información:
+
+\begin{itemize}
+	\item
+	El dataset se encuentra balanceado. 43.88 \% de los alumnos del
+	dataset desertó mientras que el 56.12 \% sigue en carrera.
+	\item
+	La variable \textbf{EsTecnico} tiene un 13.32\% de datos nulos.
+	Dependiendo el método que se use podrá tolerarse o no. En los casos
+	que no se pueda tolerar, se tendrá que imputar algún valor o se podrá
+	optar por descartar la variable.
+	\item
+	El valor mínimo de la variable \textbf{edad\_al\_ingreso} es 11. Un
+	valor muy bajo y puede tratarse de un error. Se analizaron la cantidad
+	de casos que existen en que esta variable tiene un valor menor a 17,
+	que es la mínima edad que podría entrar un estudiante a la universidad
+	respetando todos los ciclos lectivos sin adelantar ninguno de las
+	etapas de estudio anteriores, y dicho valor es de 4 observaciones. Las
+	cuales representan una cantidad insignificante respecto del total de
+	observaciones 4558 (0.06\%). Por lo tanto al no poder verificarlo por
+	el momento se decide dejarlo.
+\end{itemize}
+
+\hypertarget{correlaciuxf3n-entre-todas-las-variables}{%
+	\paragraph{Correlación entre todas las
+		variables}\label{correlaciuxf3n-entre-todas-las-variables}}
+
+%\includegraphics{Analisis_tablon_baseline_2009_files/figure-latex/unnamed-chunk-15-1.pdf}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics{imagenes/imagenes/gg_corr_todas_variables.png}
+	%\includegraphics[width=0.25\textwidth]{mesh}
+	\caption{Análisis Univariado por tipo de resursada}
+	\label{fig:tablon_correlacion}
+\end{figure}
+
+\hypertarget{correlaciuxf3n-entre-las-variables-y-la-clase}{%
+	\paragraph{Correlación entre las variables y la
+		clase}\label{correlaciuxf3n-entre-las-variables-y-la-clase}}
+
+Si bien la clase es categórica y la mayoría de las variables son
+numéricas, podemos convertir la clase en númerica convirtiendo los casos
+positivos en 1 y los negativos en 0. De esta forma podemos analizar por
+el coeficiente de correlación si es que existen variables predictoras
+que sigan o se acerquen al comportamiento de la clase. Como veremos en
+la sigueinte tabla, no hay una relación muy directa entre cada variable
+individual con la clase convertid en numérica.
+
+\input{tablas/tablon_correl_clase.tex}
 
 
