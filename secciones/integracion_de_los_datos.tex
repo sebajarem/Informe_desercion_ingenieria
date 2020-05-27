@@ -141,3 +141,83 @@ individual con la clase convertid en numérica.
 \input{tablas/tablon_correl_clase.tex}
 
 
+\subsubsection{Análisis de Variables Importantes}\label{analisis-var_importantes}
+
+Incluir un exceso de variables en el modelo suele traer aparejado una disminución de la capacidad predictiva de un modelo cuando se expone a nuevos datos (overfitting). \\
+Se realizan múltiples evaluaciones de modelos de RandomForest con bootstrapping generados mediante incorporación y eliminación de predictores con la finalidad de identificar la combinación óptima. Este análisis de realiza unicamente con el datset de train para que los valores de test no influyan en este procedimiento.\\
+
+En la tabla \ref{tab:top_10_rfe_accuracy} se detallan los mejores 10 modelos obtenidos a partir de toda la combinación posibles. Puede observarse que el mejor modelo a juzgar por la métrica Accuracy es el que se entreno solamente con 10 predictores de los 25 que cuenta el datset completo. Dichos predictores son: 
+``ciclo\_lectivo\_de\_cursada",``tipo\_de\_aprobacion\_libre", ``Turno\_Noche", ``tipo\_de\_aprobacion\_no\_firmo", ``Aprobado", ``Turno\_Tarde", ``Nota\_max\_prom", ``tipo\_de\_aprobacion\_firmo", ``Turno\_Manana" y ``cant\_resursada\_regular".\\
+
+Asimismo, en la figura \ref{fig:rfe_evolucion_accuracy} se puede observar la evolución de la mátrica accuracy en función de la cantidad de variables que toma el modelo. La dispersión en este caso está asociado a los distintos valores de accuracy que tiene cada modelo ejecutado en cross validation como así también está conplemtado todas las combinaciones de variables posibles con la cantidad que marca el eje x.\\
+Ademas de que al usar menos variables se necesita menos poder de computo, es más fácil la interpretación que se podrá hacer y tendremos una menor dispersión final.
+
+\begin{table}[!h]
+	
+	\caption{\label{tab:top_10_rfe_accuracy}Top 10 Modelos con cantidad de variables seleccionadas según Accuracy}
+	\centering
+	\begin{tabular}[t]{rrr}
+		\toprule
+		\rowcolor{black}  \multicolumn{1}{c}{\textcolor{white}{\textbf{Variables}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{media\_accuracy}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{media\_kappa}}}\\
+		\midrule
+		\rowcolor{gray!6}  10 & 0.8388631 & 0.6690887\\
+		18 & 0.8385668 & 0.6687514\\
+		\rowcolor{gray!6}  11 & 0.8381883 & 0.6678640\\
+		19 & 0.8381476 & 0.6679149\\
+		\rowcolor{gray!6}  17 & 0.8380654 & 0.6677621\\
+		\addlinespace
+		9 & 0.8377655 & 0.6670357\\
+		\rowcolor{gray!6}  23 & 0.8368520 & 0.6655250\\
+		20 & 0.8360972 & 0.6636373\\
+		\rowcolor{gray!6}  15 & 0.8360919 & 0.6637290\\
+		22 & 0.8355010 & 0.6625480\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics{imagenes/variables/rfe_evolucion_accuracy-1.pdf}
+	%\includegraphics[width=0.25\textwidth]{mesh}
+	\caption{Evolución de l Métrica Accuracy en función de la cantidad de variables usadas por el modelo}
+	\label{fig:rfe_evolucion_accuracy}
+\end{figure}
+
+\paragraph{influencia de variables}
+Tras ajustar cada uno de estos modelos, se recalcula la influencia de cada variable. De esta forma, para cada tamaño de modelo, se obtiene un ranking de la importancia promedio de las variables. Los resultados se pueden observar en \ref{tab:tf_rfe_influencia_variables} y \ref{fig:rfe_influencia_var} donde existe una variable que claramente influye mucho mas en los resultados en comparación con los otros predictores.
+
+\begin{table}[!h]
+	
+	\caption{\label{tab:tf_rfe_influencia_variables}Influencia de variables en el resultado}
+	\centering
+	\begin{tabular}[t]{lrr}
+		\toprule
+		\rowcolor{black}  \multicolumn{1}{c}{\textcolor{white}{\textbf{var}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{media\_influencia}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{sd\_influencia}}}\\
+		\midrule
+		\rowcolor{gray!6}  ciclo\_lectivo\_de\_cursada & 89.84029 & 2.9668673\\
+		tipo\_de\_aprobacion\_libre & 46.34285 & 2.2575528\\
+		\rowcolor{gray!6}  Turno\_Noche & 38.07504 & 1.7175035\\
+		tipo\_de\_aprobacion\_no\_firmo & 38.05189 & 1.5399760\\
+		\rowcolor{gray!6}  Aprobado & 35.80734 & 1.1307306\\
+		\addlinespace
+		Turno\_Tarde & 35.67467 & 1.5035133\\
+		\rowcolor{gray!6}  tipo\_de\_aprobacion\_firmo & 35.28770 & 0.6960169\\
+		Nota\_max\_prom & 35.14407 & 2.3991503\\
+		\rowcolor{gray!6}  Turno\_Manana & 34.30645 & 1.5999039\\
+		cant\_resursada\_regular & 32.25476 & 1.1929776\\
+		\addlinespace
+		\rowcolor{gray!6}  edad\_al\_ingreso & 31.90459 & 0.1024266\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics{imagenes/variables/influencia_de_variables-1.pdf}
+	%\includegraphics[width=0.25\textwidth]{mesh}
+	\caption{Influencia de las variables mas importances sobre el resultado}
+	\label{fig:rfe_influencia_var}
+\end{figure}
+
+\clearpage
+
