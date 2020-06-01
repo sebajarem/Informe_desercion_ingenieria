@@ -121,7 +121,7 @@
 %-------------------------------------------------%
 \subsection{Definir el criterio de éxito}
 %-------------------------------------------------%
-\input{secciones/definir_el_criterio_de_exito}
+\input{secciones/definir_el_criterio_de_exito_DM}
 %-------------------------------------------------%
 %-------------------------------------------------%
 \section{Producir el plan del proyecto}
@@ -206,22 +206,25 @@
 %-------------------------------------------------%
 \section{Generar el diseño de prueba}
 %-------------------------------------------------%
-\input{secciones/conjuntos_datos}
+\input{secciones/conjuntos_datos}\label{conjunto_datos}
 %-------------------------------------------------%
 %-------------------------------------------------%
-\section{Generación de modelo}
+\section{Generación de modelo}\label{generacion_modelos}
 %-------------------------------------------------%
 \input{secciones/modelo_template}
 \input{secciones/modelo_clusters}
+\input{secciones/modelos_varios.tex}
 %-------------------------------------------------%
 \section{Analizar el modelo}
 %-------------------------------------------------%
 %-------------------------------------------------%
 \subsection{Evaluación (comportamiento, ranking de modelos)}
 %-------------------------------------------------%
+\input{secciones/comparativo_modelos.tex}
 %-------------------------------------------------%
 \subsection{Reajuste de los parámetros del modelo}
 %-------------------------------------------------%
+\input{secciones/reajuste_parametros_modelos.tex}
 
 %%%% EVALUACION
 %-------------------------------------------------%
@@ -233,47 +236,55 @@
 %-------------------------------------------------%
 \subsection{Análisis de los resultados de DM}
 %-------------------------------------------------%
+\input{secciones/evaluacion_resultados.tex}\label{resultados}
 %-------------------------------------------------%
 \subsection{Selección de modelos}
 %-------------------------------------------------%
+\input{secciones/seleccion_modelos_final.tex}
 %-------------------------------------------------%
 \section{Proceso de revisión}
 %-------------------------------------------------%
+\input{secciones/proceso_revision.tex}
 %-------------------------------------------------%
 \section{Próximos pasos}
 %-------------------------------------------------%
-\input{secciones/proximos_pasos}
+\input{secciones/proximos_pasos_futuros.tex}
 %-------------------------------------------------%
 \subsection{Lista de posibles acciones}
 %-------------------------------------------------%
+\input{secciones/lista_posibles_acciones_inmediatas.tex}
 %-------------------------------------------------%
 \subsection{Decisiones}
 %-------------------------------------------------%
-
+\input{secciones/decisiones.tex}
 
 %%%% DESPLIEGUE / IMPLEMENTACION
 %-------------------------------------------------%
 \chapter{Despliegue / Implementación}
 %-------------------------------------------------%
+
 %-------------------------------------------------%
 \section{Plan de despliegue / implementación}
 %-------------------------------------------------%
+\input{secciones/despliegue_implementacion.tex}
 %-------------------------------------------------%
-\subsection{Análisis de los resultados de DM}
+%\subsection{Análisis de los resultados de DM}
 %-------------------------------------------------%
 %-------------------------------------------------%
-\subsection{Selección de modelos}
+%\subsection{Selección de modelos}
 %-------------------------------------------------%
 %-------------------------------------------------%
 \section{Plan de monitoreo y mantenimiento}
 %-------------------------------------------------%
-Informe de descripción de datos
+\input{secciones/plan_mantenimiento_control.tex}
 %-------------------------------------------------%
 \section{Preparación del informe final}
 %-------------------------------------------------%
+\input{secciones/preparacion_informe_final.tex}
 %-------------------------------------------------%
 \section{Revisión del proyecto}
 %-------------------------------------------------%
+\input{secciones/revision_proyecto.tex}
 
 
 %%%% BIBLIOGRAFIA
@@ -281,8 +292,10 @@ Informe de descripción de datos
 \bibliographystyle{amsplain}
 \bibliography{referencias}
 
+\comentarioinvisible{
 \todocambiar{cambiar mas adelnate esta referencia de CRISP-DM por la del manual, pero está buena porque explica que poner enc ada seccion}
 \href{https://www.ibm.com/support/knowledgecenter/es/SS3RA7_sub/modeler_crispdm_ddita/clementine/crisp_help/crisp_overview_container.html}{crispdm}
+}
 
 %%%% TODO LIST
 \listoftodos

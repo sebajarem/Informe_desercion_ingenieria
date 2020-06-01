@@ -5,7 +5,8 @@ Los \textbf{modelos no supervisados} utilizarán todo el tablón o mejor expresa
 
 Los \textbf{modelos supervisados} utilizarán el tablón mencionado anteriormente pero dividido en 70\% para train y 30\% para test. A su vez, el conjunto de train puede ser subdividio en train y validation si el modelo lo utiliza.
 Los nombres de los conjuntos de entrenamiento y testeo son \textit{"baseline\_2009\_train.csv"} y \textit{"baseline\_2009\_test.csv"} respectivamente.
-La generación de dichos conjuntos se realiza en la siguiente sección \ref{dataset_train_test}.
+La generación de dichos conjuntos se realiza en la siguiente sección \ref{dataset_train_test}.\\
+Asimismo y según lo obtenido en en análisis de variables importantes \ref{analisis-var_importantes}, ademas de realizar los modelos con todas las variables disponibles, se emplearan modelos con el dataset igualmente distribuido entre train y test pero unicamente utilizando aquellas variables mas importantes.
 
 %-------------------------------------------------%
 \subsection{Crear conjuntos de entrenamiento y de prueba}\label{dataset_train_test}
