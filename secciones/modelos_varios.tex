@@ -1,9 +1,8 @@
 %-------------------------------------------------%
 \subsection{Modelo: K-Nearest Neighbor (kNN)}
 %-------------------------------------------------%
-Vecinos mas cercanos.\\
-
-Este algoritmo busca las "k" observaciones mas parecidas del conjunto de entrenamiento al registro que se está evaluando que pertenece al conjunto de test. De esos k registros mas parecidos, se extraer la clase y cuyo valor sea el predominante, será el que se le otorgue al registro de Test.
+Vecinos mas cercanos:\\
+Este algoritmo busca las ``k" observaciones mas parecidas del conjunto de entrenamiento al registro que se está evaluando que pertenece al conjunto de test. De esos k registros mas parecidos, se extraer la clase y cuyo valor sea el predominante, será el que se le otorgue al registro de Test.
 
 
 %-------------------------------------------------%
@@ -15,7 +14,7 @@ Para realizar el modelo se emplea validación cruzada con 10 particiones y 5 rep
 Entonces se puede decir que se realizan: 10*5*6 = 300 modelos, y de todos ellos se obtiene el mejor.
 
 Las diferentes ejecuciones para elegir el parámetro óptimo se visualizan en la tabla \ref{tab:knn_corridas_parametros}.
-Se puede determinar que el mejor resultado se obtiene con un k=70 y accuracy de 81,27 \%.
+Se puede determinar que el mejor resultado se obtiene con un k=70 y accuracy de 81,27\%.
 
 
 \begin{table}[!h]
@@ -56,7 +55,7 @@ Se puede determinar que el mejor resultado se obtiene con un k=70 y accuracy de 
 \subsubsection{Modelar}
 %-------------------------------------------------%
 
-Se ejecuta modelo de knn con k=70 utilizando todo el datset de train como entrenamiento (sin validación) obteniendo un accuracy de 81,98 \% (muy cercano al obtenido durante la búsqueda del parámetro óptimo (81,27\%)
+Se ejecuta modelo de knn con k=70 utilizando todo el datset de train como entrenamiento (sin validación) obteniendo un accuracy de 81,98 \%, el cual es muy cercano al obtenido durante la búsqueda del parámetro óptimo (81,27\%)
 
 %-------------------------------------------------%
 \subsubsection{Describir el modelo}
@@ -125,10 +124,10 @@ clase mayoritaria (56\%)
 %-------------------------------------------------%
 
 La Regresión logística permite estimar la probabilidad de una variable cualitativa binaria en
-función de una variable cuantitativa. Es un algoritmo que puede explicar
+función de variables cuantitativas. Es un algoritmo que puede explicar
 bien la respuesta en función de sus predictores. La relación como lo
 dice su nombre es logarítmica, por lo que la relación entre las
-probabilidades y las variables no es lineal. El incremente en 1 unidad de
+probabilidades y las variables no es lineal. El incremento en 1 unidad de
 una variable depende también del valor que tiene la variable en ese
 momento (es decir, la posición en la curva logarítmica donde se
 encuentra).
@@ -180,7 +179,7 @@ buen modelo para tener en cuenta y analizarlo mas en profundidad.
 
 \begin{table}[!h]
 	
-	\caption{\label{tab:metricas_logistic}Métricas del metodo: logistic }
+	\caption{\label{tab:metricas_logistic}Métricas del método: logistic }
 	\centering
 	\begin{tabular}[t]{cc}
 		\toprule
@@ -223,9 +222,8 @@ Este algoritmo utiliza el teorema de Bayes, para estimar la probabilidad
 de que una observación pertenezca a cada una de las clases de la
 variable cualitativa según el valor de los predictores. Es un algoritmo
 explicativo y puede discriminar mas de dos clases, aunque este no sea el
-caso. La asignación de la clase calculando primero las probabilidades de
-pertenencia de la observación a cada una de las clases y luego
-asignado la clase cuya probabilidad resulta la mas alta.
+caso. En primer lugar, se calculan las probabilidades de
+pertenencia de la observación a cada una de las clases y luego se asigna la clase cuya probabilidad resulta la mas alta.
 
 
 
@@ -356,7 +354,7 @@ Evaluando el árbol con el conjunto de test, se obtiene un 83,24 \% de Accuracy.
 
 \begin{table}[!h]
 	
-	\caption{\label{tab:MatrizConf_arbol}Matriz de Confusion del metodo: arbol }
+	\caption{\label{tab:MatrizConf_arbol}Matriz de Confusión del método: árbol }
 	\centering
 	\begin{tabular}[t]{lcc}
 		\toprule
@@ -372,7 +370,7 @@ Evaluando el árbol con el conjunto de test, se obtiene un 83,24 \% de Accuracy.
 
 \begin{table}[!h]
 	
-	\caption{\label{tab:metricas_arbol}Métricas del metodo: arbol }
+	\caption{\label{tab:metricas_arbol}Métricas del método: arbol }
 	\centering
 	\begin{tabular}[t]{cc}
 		\toprule
@@ -410,7 +408,7 @@ Evaluando el árbol con el conjunto de test, se obtiene un 83,24 \% de Accuracy.
 
 Este algoritmo combina el proceso de bagging (bootstrap aggregation
 -muestras de observaciones con repetición-) con distintos modelos de
-arboles que toman features al azar. Al final promedia los modelos y
+árboles que toman features al azar. Al final promedia los modelos y
 consigue reducir la varianza.
 
 
@@ -418,16 +416,16 @@ consigue reducir la varianza.
 \subsubsection{Determinar parámetros del modelo}
 %-------------------------------------------------%
 
-se utiliza el paquete ranger en el cual se pueden definir los siguientes
+Se utiliza el paquete ranger en el cual se pueden definir los siguientes
 hiperparámetros:
 
 \begin{itemize}
 	\item
 	mtry: número predictores seleccionados aleatoriamente en cada árbol.
-	Se elijen para evaluar los valores: 3, 4, 5, 7.
+	Se eligen para evaluar los valores: 3, 4, 5, 7.
 	\item
 	min.node.size: tamaño mínimo que tiene que tener un nodo para poder
-	ser dividido. Se elijen para evaluar los valores: 2, 3, 4, 5, 10, 15,
+	ser dividido. Se eligen para evaluar los valores: 2, 3, 4, 5, 10, 15,
 	20, 30.
 	\item
 	splitrule: criterio de división. El criterio elegido es ``gini''.
@@ -436,8 +434,9 @@ hiperparámetros:
 Para este estudio, se determinó una grilla que contiene con todas las
 combinaciones posibles entre los valores anteriores.
 
-El mejor modelo determinado queda con los siguientes parámetros: mtry =
-5, splitrule = gini y min.node.size = 30 según la evolución del accuracy \ref{fig:rf_hiperparam}
+El mejor modelo determinado queda con los siguientes parámetros: mtry=5,
+splitrule=gini y
+ min.node.size=30 según la evolución del accuracy \ref{fig:rf_hiperparam}
 
 
 \begin{figure}[!htb]
@@ -501,7 +500,7 @@ corrida se obtiene un accuracy de 83.83\% \ref{tab:MatrizConf_rf} \ref{tab:metri
 
 \begin{table}[!h]
 	
-	\caption{\label{tab:metricas_rf}Métricas del metodo: rf }
+	\caption{\label{tab:metricas_rf}Métricas del método: rf }
 	\centering
 	\begin{tabular}[t]{cc}
 		\toprule
@@ -534,7 +533,7 @@ corrida se obtiene un accuracy de 83.83\% \ref{tab:MatrizConf_rf} \ref{tab:metri
 
 
 %-------------------------------------------------%
-\subsection{Modelo: xxx}
+\subsection{Modelo: Gradient Boosting}
 %-------------------------------------------------%
 
 Boosting es una de las estrategias que hay de ensemble que se pueden
@@ -574,7 +573,7 @@ pueden emplear los siguientes:
 	\item
 	bag.fraction (subsampling fraction): Si es de 1, se emplea Gradient
 	Boosting, si es menor que 1, se emplea Stochastic Gradient Boosting. Por
-	defecto su valor es de 0.5. Se utiliza valor or defecto.
+	defecto su valor es de 0.5. Se utiliza valor por defecto.
 \end{itemize}
 
 Se genera una grilla que contempla todas las combinaciones posibles de
@@ -613,7 +612,7 @@ Se evalúa el modelo con el conjunto de Test. En esta oportunidad se obtiene  Ac
 
 \begin{table}[!h]
 	
-	\caption{\label{tab:MatrizConf_boosting}Matriz de Confusion del metodo: boosting }
+	\caption{\label{tab:MatrizConf_boosting}Matriz de Confusión del método: boosting }
 	\centering
 	\begin{tabular}[t]{lcc}
 		\toprule
@@ -629,7 +628,7 @@ Se evalúa el modelo con el conjunto de Test. En esta oportunidad se obtiene  Ac
 
 \begin{table}[!h]
 	
-	\caption{\label{tab:metricas_boosting}Métricas del metodo: boosting }
+	\caption{\label{tab:metricas_boosting}Métricas del método: boosting }
 	\centering
 	\begin{tabular}[t]{cc}
 		\toprule
@@ -663,7 +662,7 @@ Se evalúa el modelo con el conjunto de Test. En esta oportunidad se obtiene  Ac
 
 
 %-------------------------------------------------%
-\subsection{Modelo: xxx}
+\subsection{Modelo: Support Vector machine (SVM)}
 %-------------------------------------------------%
 
 Este algoritmo se basa en la separación de las clases con hiperplanos y
@@ -680,7 +679,7 @@ Se utiliza el paquete kernlab que tiene 2 hiperparámetros:
 	0.01, 0.1, 0.5, 1.
 	\item
 	C: penalización por violaciones del margen del hiperplano. se prueban
-	los valores: 1 , 20, 50, 100, 200, 500, 700.
+	los valores: 1, 20, 50, 100, 200, 500, 700.
 \end{itemize}
 
 Los mejores resultados a través de las iteraciones de los modelos
@@ -716,7 +715,7 @@ Evaluando en el conjunto de Test se obtiene 84.2\% de Accuracy. Es el Modelo que
 
 \begin{table}[!h]
 	
-	\caption{\label{tab:MatrizConf_SVMradial}Matriz de Confusion del metodo: SVMradial }
+	\caption{\label{tab:MatrizConf_SVMradial}Matriz de Confusión del método: SVMradial }
 	\centering
 	\begin{tabular}[t]{lcc}
 		\toprule
@@ -764,7 +763,7 @@ Evaluando en el conjunto de Test se obtiene 84.2\% de Accuracy. Es el Modelo que
 \end{table}
 
 
-
+\clearpage
 
 %-------------------------------------------------%
 \subsection{Modelos: Selección de Variables y Modelos - Alternativa 1}
@@ -773,7 +772,7 @@ Evaluando en el conjunto de Test se obtiene 84.2\% de Accuracy. Es el Modelo que
 Los modelos anteriores se han generado con el dataset completo, es decir, utilizando todas las variables disponibles.\\
 
 En este caso, debido al estudio de variables \ref{analisis-var_importantes} y como se mencionó en \ref{conjunto_datos}, se comprobaron mejores resultados
-con datasets utilizando únicamente varibles seleccionadas. En este caso son 10 variables de las 24 disponibles:\\
+con datasets utilizando únicamente variables seleccionadas. En este caso son 10 variables de las 24 disponibles:\\
 
 ``ciclo\_lectivo\_de\_cursada'', ``tipo\_de\_aprobacion\_libre'',
 ``Turno\_Noche'', ``tipo\_de\_aprobacion\_no\_firmo'', ``Aprobado''
@@ -804,10 +803,8 @@ Regresión Logistica: (sin parametros)
 \subsubsection{Modelar}
 %-------------------------------------------------%
 
-Los valores de Accuracy obtenidos en entrenamiento:
-
+Los valores de Accuracy obtenidos en entrenamiento:\\
 Random Forest: 84,34\% (con validation) y 91,03\% (solo train).\\
-
 Regresión logística: 83,13\% (con validación y 83,45\% (solo train)
 
 
@@ -817,14 +814,14 @@ Regresión logística: 83,13\% (con validación y 83,45\% (solo train)
 %-------------------------------------------------%
 
 Se evalúan los modelos con el conjunto de Test.
-Los Nuevos Valores correspondinetes a la métrica Accuracy en los modelos de regresión logística (Reg\_Logística) y RandomForest (RandomForest) son 83,39\% y 84,05\% respectivamente. \ref{tab:metricas_RandomForest} \ref{tab:metricas_Reg_logistica}
+Los Nuevos Valores correspondinetes a la métrica Accuracy en los modelos de regresión logística (Reg\_Logística) y RandomForest (RandomForest) son 83,39\% y 84,05\% respectivamente. %\ref{tab:metricas_RandomForest} \ref{tab:metricas_Reg_logistica}
 
 %-------------------------------------------------%
-\subsection{Modelo: Modelos: Selección de Variables y Modelos - Alternativa 2}
+\subsection{Modelos: Selección de Variables y Modelos - Alternativa 2}
 %-------------------------------------------------%
 
 En este caso, se quieren evaluar algunos métodos pero sin tener en cuenta la variable mas importante ``ciclo\_lectivo\_de\_cursada''.\\
-Al modificar los datos de entrada, se realiza un un nuevo análisis sobre selección de features sin tener en cuenta la variable mencionada. Este análisis determina que para obtener el mejer resultado evaluando la métrica accuracy, deben utilizarse todos los predictores disponibles. \\
+Al modificar los datos de entrada, se realiza un nuevo análisis sobre selección de features sin tener en cuenta la variable mencionada. Este análisis determina que para obtener el mejor resultado evaluando la métrica accuracy, deben utilizarse todos los predictores disponibles. \\
 
 %En este caso, debido al estudio de variables \ref{analisis-var_importantes} y como se mencionó en \ref{conjunto_datos}
 
@@ -841,7 +838,7 @@ mencionados anteriormente las secciones de cada modelo por separado.
 Se detallan los nuevos parámetros óptimos encontrados: 
 RandomForest: mtry = 7, splitrule = gini y min.node.size = 10.
 \\
-Regresión Logistica (sinparametros)\\
+Regresión Logística (sin parametros)\\
 GBM: n.trees = 2000, interaction.depth = 2, shrinkage = 0.01
 y n.minobsinnode = 15\\
 SVM: sigma = 0.001 y C = 200
@@ -852,24 +849,22 @@ C5.0: (sin parámetros)
 \subsubsection{Modelar}
 %-------------------------------------------------%
 
-Se ejecutan los modelos y se obtienen los sigientes valores en la métrica Accuracy:
-
-Regresion Logística: 77,31\% (con validación), 77,68\% (con train)
-RandomForest: 78,28\% (con validación), 96,74\% (con train)
-GBM: 77,84\% (con validación), 79,63\% (con train)
-C5.0: 75,36\% (con validación), 81,47\% (con train)
+Se ejecutan los modelos y se obtienen los sigientes valores en la métrica Accuracy:\\
+Regresion Logística: 77,31\% (con validación), 77,68\% (con train)\\
+RandomForest: 78,28\% (con validación), 96,74\% (con train)\\
+GBM: 77,84\% (con validación), 79,63\% (con train)\\
+C5.0: 75,36\% (con validación), 81,47\% (con train)\\
 SVM: 78,1\% (con validación), 79,88\% (con train)
 
 %-------------------------------------------------%
 \subsubsection{Describir el modelo}
 %-------------------------------------------------%
 
-Se predicen las observaciones del conjunto de Test y contrastando con el target, se obtienen los siguientes valores en la métrica Accuracy:
-
-GradientBoosting: 75,2\%
-C5.0: 75,34\%
-Regresión Logística: 77,17\%
-SVM: 78,20\%
+Se predicen las observaciones del conjunto de Test y contrastando con el target, se obtienen los siguientes valores en la métrica Accuracy:\\
+GradientBoosting: 75,2\%,\\
+C5.0: 75,34\%,\\
+Regresión Logística: 77,17\%\\
+SVM: 78,20\%\\
 RandomForest: 78,49\%
 
 

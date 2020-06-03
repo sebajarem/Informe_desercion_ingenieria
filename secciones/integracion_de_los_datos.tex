@@ -32,11 +32,11 @@ integración de la información, agregación de campos y campos calculados:
 \clearpage
 
 \hypertarget{dataset-supervisado-valores-en-funciuxf3n-de-la-clase}{%
-	\subparagraph{Dataset Supervisado: Valores en función de la
-		clase}\label{dataset-supervisado-valores-en-funciuxf3n-de-la-clase}}
+	\subparagraph{\underline{Dataset Supervisado: Valores en función de la clase}}\label{dataset-supervisado-valores-en-funciuxf3n-de-la-clase}}
+
 
 Como es un dataset supervisado, podría ser interesante ver los valores
-separados por clase. Por lo tanto el dataset y con el objeto solamente
+separados por clase. Por lo tanto el dataset y con el objetivo solamente
 de realizar un análisis exploratorio, se divide según la clase y se
 realizan los estadísticos nuevamente.
 
@@ -86,7 +86,7 @@ realizan los estadísticos nuevamente.
 \clearpage
 
 \hypertarget{observaciones}{%
-	\paragraph{Observaciones}\label{observaciones}}
+	\paragraph{\textbf{\underline{Observaciones}}}\label{observaciones}}
 
 De las tablas y gráficos anteriores podemos extraer la siguiente
 información:
@@ -113,8 +113,7 @@ información:
 \end{itemize}
 
 \hypertarget{correlaciuxf3n-entre-todas-las-variables}{%
-	\paragraph{Correlación entre todas las
-		variables}\label{correlaciuxf3n-entre-todas-las-variables}}
+	\paragraph{\underline{\textbf{Correlación entre todas las variables}}}\label{correlaciuxf3n-entre-todas-las-variables}}
 
 %\includegraphics{Analisis_tablon_baseline_2009_files/figure-latex/unnamed-chunk-15-1.pdf}
 
@@ -127,8 +126,7 @@ información:
 \end{figure}
 
 \hypertarget{correlaciuxf3n-entre-las-variables-y-la-clase}{%
-	\paragraph{Correlación entre las variables y la
-		clase}\label{correlaciuxf3n-entre-las-variables-y-la-clase}}
+	\paragraph{\underline{Correlación entre las variables y la clase}}\label{correlaciuxf3n-entre-las-variables-y-la-clase}}
 
 Si bien la clase es categórica y la mayoría de las variables son
 numéricas, podemos convertir la clase en númerica convirtiendo los casos
@@ -136,20 +134,20 @@ positivos en 1 y los negativos en 0. De esta forma podemos analizar por
 el coeficiente de correlación si es que existen variables predictoras
 que sigan o se acerquen al comportamiento de la clase. Como veremos en
 la sigueinte tabla, no hay una relación muy directa entre cada variable
-individual con la clase convertid en numérica.
+individual con la clase convertida en numérica.
 
 \input{tablas/tablon_correl_clase.tex}
 
 
-\subsubsection{Análisis de Variables Importantes}\label{analisis-var_importantes}
+\subsubsection{\textbf{Análisis de Variables Importantes}}\label{analisis-var_importantes}
 
 Incluir un exceso de variables en el modelo suele traer aparejado una disminución de la capacidad predictiva de un modelo cuando se expone a nuevos datos (overfitting). \\
-Se realizan múltiples evaluaciones de modelos de RandomForest con bootstrapping generados mediante incorporación y eliminación de predictores con la finalidad de identificar la combinación óptima. Este análisis de realiza unicamente con el datset de train para que los valores de test no influyan en este procedimiento.\\
+Se realizan múltiples evaluaciones de modelos de RandomForest con bootstrapping generados mediante incorporación y eliminación de predictores con la finalidad de identificar la combinación óptima. Este análisis de realiza únicamente con el datset de train para que los valores de test no influyan en este procedimiento.\\
 
-En la tabla \ref{tab:top_10_rfe_accuracy} se detallan los mejores 10 modelos obtenidos a partir de toda la combinación posibles. Puede observarse que el mejor modelo a juzgar por la métrica Accuracy es el que se entreno solamente con 10 predictores de los 25 que cuenta el datset completo. Dichos predictores son: 
+En la tabla \ref{tab:top_10_rfe_accuracy} se detallan los mejores 10 modelos obtenidos a partir de toda la combinación posibles. Puede observarse que el mejor modelo a juzgar por la métrica Accuracy es el que se entrenó solamente con 10 predictores de los 24 que cuenta el datset completo. Dichos predictores son: 
 ``ciclo\_lectivo\_de\_cursada",``tipo\_de\_aprobacion\_libre", ``Turno\_Noche", ``tipo\_de\_aprobacion\_no\_firmo", ``Aprobado", ``Turno\_Tarde", ``Nota\_max\_prom", ``tipo\_de\_aprobacion\_firmo", ``Turno\_Manana" y ``cant\_resursada\_regular".\\
 
-Asimismo, en la figura \ref{fig:rfe_evolucion_accuracy} se puede observar la evolución de la mátrica accuracy en función de la cantidad de variables que toma el modelo. La dispersión en este caso está asociado a los distintos valores de accuracy que tiene cada modelo ejecutado en cross validation como así también está conplemtado todas las combinaciones de variables posibles con la cantidad que marca el eje x.\\
+Asimismo, en la figura \ref{fig:rfe_evolucion_accuracy} se puede observar la evolución de la métrica accuracy en función de la cantidad de variables que toma el modelo. La dispersión en este caso está asociado a los distintos valores de accuracy que tiene cada modelo ejecutado en cross validation como así también está contemplado todas las combinaciones de variables posibles con la cantidad que marca el eje x.\\
 Ademas de que al usar menos variables se necesita menos poder de computo, es más fácil la interpretación que se podrá hacer y tendremos una menor dispersión final.
 
 \begin{table}[!h]
@@ -179,11 +177,11 @@ Ademas de que al usar menos variables se necesita menos poder de computo, es má
 	\centering
 	\includegraphics{imagenes/variables/rfe_evolucion_accuracy-1.pdf}
 	%\includegraphics[width=0.25\textwidth]{mesh}
-	\caption{Evolución de l Métrica Accuracy en función de la cantidad de variables usadas por el modelo}
+	\caption{Evolución de la métrica Accuracy en función de la cantidad de variables usadas por el modelo}
 	\label{fig:rfe_evolucion_accuracy}
 \end{figure}
 
-\paragraph{influencia de variables}
+\paragraph{\underline{influencia de variables:}}
 Tras ajustar cada uno de estos modelos, se recalcula la influencia de cada variable. De esta forma, para cada tamaño de modelo, se obtiene un ranking de la importancia promedio de las variables. Los resultados se pueden observar en \ref{tab:tf_rfe_influencia_variables} y \ref{fig:rfe_influencia_var} donde existe una variable que claramente influye mucho mas en los resultados en comparación con los otros predictores.
 
 \begin{table}[!h]
@@ -223,13 +221,13 @@ Tras ajustar cada uno de estos modelos, se recalcula la influencia de cada varia
 
 
 
-\subsubsection{Análisis de Variables Importantes: Dataset sin Variable ciclo\_lectivo\_de\_cursada}\label{analisis-var_importantes-2}
+\subsubsection{\textbf{Análisis de Variables Importantes:} Dataset sin Variable ``ciclo\_lectivo\_de\_cursada"}\label{analisis-var_importantes-2}
 
 De acuerdo al análisis de Variables anterior, se decide eliminar la variable mas influyente en el resultado (``ciclo\_lectivo\_de\_cursada'') y analizar el dataset resultante. Esto se realiza para verificar que aún sin esa información es posible armar buenos modelos predictivos.
 
-Se utilizan la misma técnica anterior de múltiples evaluaciones con  modelos de RandomForest con bootstrapping generados mediante incorporación y eliminación de predictores con la finalidad de identificar la combinación óptima. Este análisis de realiza unicamente con el datset de train para que los valores de test no influyan en este procedimiento.\\
+Se utiliza la misma técnica anterior de múltiples evaluaciones con  modelos de RandomForest con bootstrapping generados mediante incorporación y eliminación de predictores con la finalidad de identificar la combinación óptima. Este análisis de realiza unicamente con el datset de train para que los valores de test no influyan en este procedimiento.\\
 
-En la tabla \ref{tab:top_10_rfe_accuracy_datasetAlternativa2} se detallan los mejores 10 modelos obtenidos a partir de toda la combinación posibles. El mejor modelo a juzgar por la métrica Accuracy es el que se entrena con todos los predictores disponibles.
+En la tabla \ref{tab:top_10_rfe_accuracy_datasetAlternativa2} se detallan los mejores 10 modelos obtenidos a partir de todas las combinaciones posibles. El mejor modelo a juzgar por la métrica Accuracy es el que se entrena con todos los predictores disponibles.
 
 Asimismo, en la figura \ref{fig:rfe_evolucion_accuracy_datasetAlternativa2} se puede observar la evolución de la mátrica accuracy en función de la cantidad de variables que toma el modelo. La dispersión en este caso está asociado a los distintos valores de accuracy que tiene cada modelo ejecutado en cross validation como así también está contemplado todas las combinaciones de variables posibles con la cantidad que marca el eje x.\\
 Se puede observar que desde que la cantidad de variables es 15, el Accuracy obtenido es un valor muy próximo al máximo que se consigue con 23 variables. Por lo que, si se opta por este dataset y se lo quisiera explicar quizas sería mas sencillo con menos variables aunque sigue siendo una cantidad considerablemente alta para extraer conclusiones sencillas y dependerá mucho de la interacción entre ellas.\\
@@ -262,11 +260,11 @@ Se puede observar que desde que la cantidad de variables es 15, el Accuracy obte
 	\centering
 	\includegraphics{imagenes/variables/rfe_evolucion_accuracy-1_alternativa2.pdf}
 	%\includegraphics[width=0.25\textwidth]{mesh}
-	\caption{Evolución de l Métrica Accuracy en función de la cantidad de variables usadas por el modelo}
+	\caption{Evolución de la Métrica Accuracy en función de la cantidad de variables usadas por el modelo}
 	\label{fig:rfe_evolucion_accuracy_datasetAlternativa2}
 \end{figure}
 
-\paragraph{influencia de variables}
+\paragraph{\underline{influencia de variables}}
 Tras ajustar cada modelo, se recalcula la influencia de cada variable.
 De esta forma, para cada tamaño de modelo, se obtiene un ranking de la
 importancia promedio de las variables. Los resultados se pueden observar en \ref{tab:tf_rfe_influencia_variables_23} y \ref{fig:rfe_influencia_var_dsalternativa2}. Se puede observar que la influencia sobre el resultado final ahora es mas equitativo entre las variables.
@@ -316,7 +314,7 @@ importancia promedio de las variables. Los resultados se pueden observar en \ref
 	\centering
 	\includegraphics{imagenes/variables/influencia_de_variables_23-1.pdf}
 	%\includegraphics[width=0.25\textwidth]{mesh}
-	\caption{Influencia de las variables mas importantes sobre el resultado}
+	\caption{Influencia de las variables más importantes sobre el resultado}
 	\label{fig:rfe_influencia_var_dsalternativa2}
 \end{figure}
 

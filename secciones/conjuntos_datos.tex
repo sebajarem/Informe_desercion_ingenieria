@@ -12,7 +12,7 @@ Asimismo y según lo obtenido en en análisis de variables importantes \ref{anal
 \subsection{Crear conjuntos de entrenamiento y de prueba}\label{dataset_train_test}
 %-------------------------------------------------%
 
-Los conjuntos de train y test se dividen de manera estratificada con la clase y de manera aleatoria con las observaciones. El conjunto train a su vez es subdividido en la etapa de creación de modelos en en train y validation para que en conjunto con técnicas como cross-validation para disminuir o evitar el sobreajuste durante el entrenamiento.\\
+Los conjuntos de train y test se dividen de manera estratificada con la clase y de manera aleatoria con las observaciones. El conjunto train a su vez es subdividido en la etapa de creación de modelos en train y validation para que en conjunto con técnicas como cross-validation disminuya o evite el sobreajuste durante el entrenamiento.\\
 
 La proporción de ambos datasets ha quedado en 56\% de no desertores y 44\% de desertores.
 
@@ -22,7 +22,7 @@ La proporción de ambos datasets ha quedado en 56\% de no desertores y 44\% de d
 \subsubsection{Otros Datasets}
 %-------------------------------------------------%
 
-\paragraph{Reducción de Dimensión: Análisis de Componentes Principales}\label{anuxe1lisis-de-componentes-principales}
+\paragraph{\textbf{\underline{Reducción de Dimensión: Análisis de Componentes Principales}}}\label{anuxe1lisis-de-componentes-principales}
 
 Se aplica la técnica de Componentes Principales para reducir la cantidad de variables predictoras pero que a su vez sigan mantengan un gran porcentaje de la variabilidad total.\\
 El resultado puede observarse en \ref{fig:pca_varexp_comp}, \ref{tab:loadings_pca_tablon} y \ref{fig:pca_biplot}. Los mismo indican que si bien se puede reducir la cantidad de variables
@@ -89,7 +89,7 @@ dichas componentes no tienen una clara identificación de lo que significan las 
 	\label{fig:pca_biplot}
 \end{figure}
 
-\paragraph{Reducción de Dimensión: Reducción por t-SNE}\label{reducciuxf3n-por-t-sne}
+\paragraph{\textbf{\underline{Reducción de Dimensión: Reducción por t-SNE}}}\label{reducciuxf3n-por-t-sne}
 
 Al igual que PCA, existen otro algoritmos que pueden realizar reducción
 de dimensionalidad. Unos de esos casos es el método no lineal

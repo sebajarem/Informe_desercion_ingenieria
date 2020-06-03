@@ -13,8 +13,7 @@ otras (SMC, Jaccard, etc) y tratar de transformar esas matrices de
 distancias en una nueva matriz unificada con criterios, se decide
 transformar los datos categóricos en numéricos aprovechando que ambos
 campos tiene solamente 2 valores por lo que estarán en los extremos
-tomando una normalización entre 0 y 1. En el caso de las observaciones
-que con valor nulo en la variable EsTecnico, se imputará con el valor
+tomando una normalización entre 0 y 1. En el caso de las observaciones con valor nulo en la variable EsTecnico, se imputará con el valor
 0.5 (mitad entre extremos)
 
 \paragraph{Análisis de tendencia al agrupamiento}
@@ -30,7 +29,7 @@ por lo que tiene mucha tendencia a ser clusterizado.
 \paragraph{\textbf{Matriz de Distancias de observaciones:}} euclideana
 
 \paragraph{\textbf{Número óptimo de clusters}} \label{estudio-del-numero-optimo-de-clusters}
-Para este estudio, se aplicaron 2 técnicas de agrupamiento llamadas kmeans y jerárquico. A su vez, se ha recalculado para distintas cantidades de agrupaciones finales (entre 2 y 8 grupos) y por último a cada uno de estos grupos se calcularon métricas sobre la conectividad y agrupamiento.\\
+Para este estudio, se aplicaron 2 técnicas de agrupamiento llamadas kmeans y jerárquico. Se han calculado distintas métricas de agrupamiento y conectividad para determinar cual es el número óptimo de clusters, tomando como inicio 2 grupos y máximo 8.\\
 
 Los resultados que se obtuvieron pueden observarse en: \ref{fig:kmeans_numoptimal_silhouette},  \ref{fig:kmeans_numoptimal_sumsquare} y \ref{kmeas_jerarquico_numoptimal}
 
@@ -121,7 +120,7 @@ La conclusión es que la mejor opción es hacer clusters de 2 grupos ya sea por 
 \subsubsection{\textbf{Modelar}}
 %-------------------------------------------------%
 
-\paragraph{Cluster Kmeans}\label{cluster-kmeans}
+\paragraph{\underline{\textbf{Cluster Kmeans}}}\label{cluster-kmeans}
 
 Tomando como referencia las validaciones anteriores, se realiza un
 cluster kmeans con 2 centroides. Este método se repetirá 25 veces
@@ -149,7 +148,7 @@ Dicho procedimiento arroja resultados \ref{fig:kmeans_cluster_optimo} y \ref{fig
 
 
 \hypertarget{cluster-jeruxe1rquico}{%
-	\paragraph{cluster jerárquico}\label{cluster-jeruxe1rquico}}
+	\paragraph{\textbf{\underline{cluster jerárquico}}}\label{cluster-jeruxe1rquico}}
 En este submodelo debido a la gran cantidad de observaciones, no podrá mostrarse el dendograma completo. Por lo tanto, el modelo se ejecuta y según lo sugerido en
 las validaciones, se realiza el corte en 2 grupos. La composición puede observarse en la siguiente sección.
 
@@ -227,11 +226,11 @@ matemáticas.\\
 La tabla \ref{tab:tabla_muchos_clusters} y la figura \ref{fig:muchos_clusters} detallan los resultados de este experimento. La figura muestra la misma información que el cuadro anterior. En el eje
 x indica que tipo de cluster es, cuantos clusters y la clase deserto
 (``S'' y ``N''). En el eje y se indica el numero de cluster, por lo que
-los cluster armados solo con 2 clusters, habrá información únicamente
-hasta esa altura. Por ejemplo, para el el caso de aplciar un método
+los cluster armados solo con 2 grupos, habrá información únicamente
+hasta esa altura. Por ejemplo, para el caso de aplicar un método
 jerárquico de 2 clusters podemos observar que en el primer cluster
 tenemos 2554 casos Negatigos y 1996 casos positivos, mientras que el
-cluster número 2 esta conformado de 4 casos negativos y 4 casos
+cluster número 2 está conformado de 4 casos negativos y 4 casos
 positivos.
 
 
