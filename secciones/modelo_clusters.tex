@@ -2,7 +2,7 @@
 \subsection{Modelo: Clusters}
 %-------------------------------------------------%
 
-Se utilizarán técnicas de clusters sobre la base del tablón con el objetivo de observar si realmente existen agrupamientos basados en las características que contiene el tablón. Al terminar, se ingresará el clase sobre cada individuo y se analizará la composición de cada agrupamiento si se corresponde con dicho target. \\
+Se utilizarán técnicas de clusters sobre la base del tablón con el objetivo de observar si realmente existen agrupamientos basados en las características que contiene el tablón. Al terminar, se analizará la composición de cada agrupamiento en función de la clase para evidenciar si se corresponde con dicho target. \\
 
 \paragraph{\textbf{Criterio:}}
 
@@ -158,7 +158,7 @@ las validaciones, se realiza el corte en 2 grupos. La composición puede observa
 %-------------------------------------------------%
 
 \paragraph{\textbf{Kmeans}}
-El cluster kmeans modelado en la sección anterior parece ser muy bueno. Por lo tanto el próximo paso es saber en que cluster cae cada observación según su target para realizar una descripción de su composición según nuestra variable de interés.\\
+El cluster kmeans modelado en la sección anterior parece ser muy bueno. Por lo tanto el próximo paso es saber en qué cluster cae cada observación según su target para realizar una descripción de su composición según nuestra variable de interés.\\
 La tabla \ref{tab:kmeans_2_resumen} y la figura \ref{fig:kmeans_cluster_optimo_composicion} resumen dicho análisis. Puede observarse que un grupo contiene solamente un 11,13\% de datos
 erroneos, pero el otro grupo está muy balanceado. Por lo tanto, el
 cluster de 2 grupos a pesar de que tenga muy buenos valores en las
@@ -193,7 +193,7 @@ validaciones realizadas, al verificar con el target real no da un buen resultado
 \paragraph{\textbf{jerárquico}}
 
 La composición de los grupos puede observarse en la tabla \ref{tab:tabla_jerarquico_composicion}. La misma detalla un grupo muy numeroso y otro muy chico y
-ambos estan muy mezclados en función el target. Por lo tanto, el método
+ambos estan muy mezclados en función del target. Por lo tanto, el método
 jerárquico no es adecuado.
 
 \begin{table}[!h]
@@ -214,7 +214,7 @@ jerárquico no es adecuado.
 
 \subsubsection{\textbf{Extensión de Clusters}}
 
-A pesar del estudio de validaciones y resultados anteriormente,
+A pesar del estudio de validaciones y resultados anteriores,
 se propone realizar varios modelos de cluster cambiando métodos y cantidad de grupos formados para estudiar los resultados. \\
 De esta forma se pretende evaluar si existe algún modelo que sin importar la cantidad de grupos, represente mayoritariamente a las observaciones que lo componen según la clase deserto, la cual no es incluida para realizar los clusters.\\
 La hipótesis es que como los resultados reales hacen referencia al target,

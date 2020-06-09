@@ -1,5 +1,5 @@
 Una vez que se han entrenado y optimizado distintos modelos, se tiene
-que identificar cuál de ellos consigue mejores resultados. Elegir un modelo u otro depende en cierta parte del objetivo del análisis y lo que se necesita extraer de el. Una manera para comparar los modelos es a través de las métricas de entrenamiento, validación y test. Estas métricas indican si el modelo es buen predictor, si está sobreajustado, y si cumple con los criterios de éxitos propuestos.\\
+que identificar cuál de ellos consigue mejores resultados. Elegir un modelo u otro depende en cierta parte del objetivo del análisis y lo que se necesita extraer de él. Una manera para comparar los modelos es a través de las métricas de entrenamiento, validación y test. Estas métricas indican si el modelo es buen predictor, si está sobreajustado, y si cumple con los criterios de éxito propuestos.\\
 
 Las métricas mas importantes se obtienen del análisis del conjunto de Test, ya que éste tiene las observaciones que no se utilizaron para armar el modelo, por lo que nos indica si es o no un buen predictor.\\
 
@@ -28,22 +28,22 @@ Esta comparación se detalla en la tabla \ref{tab:cuadro_comparativo-modelos} y 
 		\toprule
 		\rowcolor{black}  \multicolumn{1}{c}{\textcolor{white}{\textbf{object}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{Test}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{Training}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{dataset}}}\\
 		\midrule
-		\rowcolor{gray!6}  SVMradial & 0.8419898 & 0.8511438 & DataSet-Completo\\
-		RandomForest & 0.8405267 & 0.9103729 & DataSet-Alternativa1\\
-		\rowcolor{gray!6}  rf & 0.8383321 & 0.9200877 & DataSet-Completo\\
-		boosting & 0.8361375 & 0.8740207 & DataSet-Completo\\
-		\rowcolor{gray!6}  logistic & 0.8354060 & 0.8420558 & DataSet-Completo\\
+		\rowcolor{gray!6}  SVMradial & 0.8420 & 0.8511 & DataSet-Completo\\
+		RandomForest & 0.8405 & 0.9103 & DataSet-Alternativa1\\
+		\rowcolor{gray!6}  rf & 0.8383 & 0.9200 & DataSet-Completo\\
+		boosting & 0.8361 & 0.8740 & DataSet-Completo\\
+		\rowcolor{gray!6}  logistic & 0.8354 & 0.8420 & DataSet-Completo\\
 		\addlinespace
-		Reg\_logistica & 0.8339429 & 0.8345346 & DataSet-Alternativa1\\
-		\rowcolor{gray!6}  arbol & 0.8324799 & 0.8552178 & DataSet-Completo\\
-		LDA & 0.8266277 & 0.8301473 & DataSet-Completo\\
-		\rowcolor{gray!6}  KNN & 0.8039503 & 0.8198057 & DataSet-Completo\\
-		RandomForest\_5 & 0.7849305 & 0.9674083 & DataSet-Alternativa2\\
+		Reg\_logistica & 0.8339 & 0.8345 & DataSet-Alternativa1\\
+		\rowcolor{gray!6}  arbol & 0.8324 & 0.8552 & DataSet-Completo\\
+		LDA & 0.8266 & 0.8301 & DataSet-Completo\\
+		\rowcolor{gray!6}  KNN & 0.8039 & 0.8198 & DataSet-Completo\\
+		RandomForest\_5 & 0.7849 & 0.9674 & DataSet-Alternativa2\\
 		\addlinespace
-		\rowcolor{gray!6}  SVM\_5 & 0.7820044 & 0.7988092 & DataSet-Alternativa2\\
-		Reg\_logistica\_5 & 0.7717630 & 0.7768725 & DataSet-Alternativa2\\
-		\rowcolor{gray!6}  C50\_5 & 0.7534748 & 0.8147916 & DataSet-Alternativa2\\
-		GradienBoosting\_5 & 0.7520117 & 0.7963021 & DataSet-Alternativa2\\
+		\rowcolor{gray!6}  SVM\_5 & 0.7820 & 0.7988 & DataSet-Alternativa2\\
+		Reg\_logistica\_5 & 0.7717 & 0.7768 & DataSet-Alternativa2\\
+		\rowcolor{gray!6}  C50\_5 & 0.7534 & 0.8147 & DataSet-Alternativa2\\
+		GradienBoosting\_5 & 0.7520 & 0.7963 & DataSet-Alternativa2\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -67,10 +67,9 @@ tiene en el resultado (DataSet-Alternativa2). De los métodos explicativos se pu
 regresión logística seguido del árbol simple dan buenos resultados y no
 muy alejado de las métricas de SVM.
 
-Po otro lado, los distintos modelos de Random Forest dan muy buenos
+Por otro lado, los distintos modelos de Random Forest dan muy buenos
 resultados pero hay una diferencia muy grande en comparación a los otros
-métodos entre train y test, por lo que hay que tener cuidado por el
-riesgo de sobreajuste.
+métodos entre train y test, por lo que hay riesgo de que hayan sufrido sobreajuste.
 
 A su vez, se demostró que es factible utilizar menor cantidad de features y obtener resultados mejores utilizando el Método de RandomForest aunque la diferencia es mínima.
 

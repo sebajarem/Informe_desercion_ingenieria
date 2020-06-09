@@ -6,7 +6,12 @@ Los \textbf{modelos no supervisados} utilizarán todo el tablón o mejor expresa
 Los \textbf{modelos supervisados} utilizarán el tablón mencionado anteriormente pero dividido en 70\% para train y 30\% para test. A su vez, el conjunto de train puede ser subdividio en train y validation si el modelo lo utiliza.
 Los nombres de los conjuntos de entrenamiento y testeo son \textit{"baseline\_2009\_train.csv"} y \textit{"baseline\_2009\_test.csv"} respectivamente.
 La generación de dichos conjuntos se realiza en la siguiente sección \ref{dataset_train_test}.\\
-Asimismo y según lo obtenido en en análisis de variables importantes \ref{analisis-var_importantes}, ademas de realizar los modelos con todas las variables disponibles, se emplearan modelos con el dataset igualmente distribuido entre train y test pero unicamente utilizando aquellas variables mas importantes.
+Asimismo y según lo obtenido en el análisis de variables importantes \ref{analisis-var_importantes}, además de realizar los modelos con todas las variables disponibles, se emplearán modelos con el dataset igualmente distribuido entre train y test pero únicamente utilizando aquellas variables más importantes.\\
+En los modelos que poseen hiperparámetros, se utilizará la modalidad gridsearch. La misma consta en elegir valores posibles para cada hiperparámetro. Luego, generar una grilla que contempla todas las combinaciones posibles entre dichos valores. Al utilizar cross-validation, por cada combinación se genera una cantidad igual a particiones*repeticiones modelos. Luego se evalúa su desempeño, en este caso a través de la métrica accuracy, determinando la combinación óptima de valores de hiperparámetros que dan lugar al mejor modelo.
+
+
+
+
 
 %-------------------------------------------------%
 \subsection{Crear conjuntos de entrenamiento y de prueba}\label{dataset_train_test}
@@ -25,7 +30,7 @@ La proporción de ambos datasets ha quedado en 56\% de no desertores y 44\% de d
 \paragraph{\textbf{\underline{Reducción de Dimensión: Análisis de Componentes Principales}}}\label{anuxe1lisis-de-componentes-principales}
 
 Se aplica la técnica de Componentes Principales para reducir la cantidad de variables predictoras pero que a su vez sigan mantengan un gran porcentaje de la variabilidad total.\\
-El resultado puede observarse en \ref{fig:pca_varexp_comp}, \ref{tab:loadings_pca_tablon} y \ref{fig:pca_biplot}. Los mismo indican que si bien se puede reducir la cantidad de variables
+El resultado puede observarse en \ref{fig:pca_varexp_comp}, \ref{tab:loadings_pca_tablon} y \ref{fig:pca_biplot}. Los mismos indican que si bien se puede reducir la cantidad de variables
 predictoras y mantener una alta variabilidad de la información
 explicada, los diagramas de biplot en este caso no nos servirían de
 mucha ayuda ya que en las primeras 2 componentes solo se explica el 41\%
@@ -99,7 +104,7 @@ combinaciones lineales de las variables originales.\\
 
 Por lo tanto se aplica dicho método de reducción al tablón original y al mismo tiempo se identifican las observaciones según el target real (variable no incluida al hacer la reducción). Cuyos resultados \ref{fig:tsne} indican que si bien no se arman grupos bien definidos,
 al identificar cada observación con un color en el gráfico según el
-target puede observarse que están mas separadas y hay menos solapamiento entre ellas que con el método PCA. Este resultado puede insinuar que es posible clasificar un gran porcentaje de los casos correctamente a costa quizás de no poder describir o explicar fácilmente como se ha llegado a los resultados.
+target puede observarse que están más separadas y hay menos solapamiento entre ellas que con el método PCA. Este resultado puede insinuar que es posible clasificar un gran porcentaje de los casos correctamente a costa quizás de no poder describir o explicar fácilmente como se ha llegado a los resultados.
 
 
 \begin{figure}[!htb]

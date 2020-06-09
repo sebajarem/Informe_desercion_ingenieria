@@ -2,13 +2,13 @@
 \subsection{Modelo: K-Nearest Neighbor (kNN)}
 %-------------------------------------------------%
 Vecinos mas cercanos:\\
-Este algoritmo busca las ``k" observaciones mas parecidas del conjunto de entrenamiento al registro que se está evaluando que pertenece al conjunto de test. De esos k registros mas parecidos, se extraer la clase y cuyo valor sea el predominante, será el que se le otorgue al registro de Test.
+Este algoritmo busca las ``k" observaciones mas parecidas del conjunto de entrenamiento al registro que se está evaluando que pertenece al conjunto de test. De esos k registros mas parecidos, se extrae la clase y cuyo valor sea el predominante, será el que se le otorgue al registro de Test.
 
 
 %-------------------------------------------------%
 \subsubsection{Determinar parámetros del modelo}
 %-------------------------------------------------%
-Esté método tiene un hiperparámentro solo (k), que hace referencia a la cantidad de registros vecinos que el algoritmo evaluará para luego clasificar según la clase predominante.\\
+Éste método tiene un hiperparámentro solo (k), que hace referencia a la cantidad de registros vecinos que el algoritmo evaluará para luego clasificar según la clase predominante.\\
 
 Para realizar el modelo se emplea validación cruzada con 10 particiones y 5 repeticiones. A su vez, cada iteración se repite con distintos valores del hiperparámetro k. En este caso se optaron por 6 valores: (1, 2, 5, 10, 15, 20, 30, 50, 60, 70, 80).\\
 Entonces se puede decir que se realizan: 10*5*6 = 300 modelos, y de todos ellos se obtiene el mejor.
@@ -25,19 +25,19 @@ Se puede determinar que el mejor resultado se obtiene con un k=70 y accuracy de 
 		\toprule
 		\rowcolor{black}  \multicolumn{1}{c}{\textcolor{white}{\textbf{k}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{Accuracy}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{Kappa}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{AccuracySD}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{KappaSD}}}\\
 		\midrule
-		\rowcolor{gray!6}  1 & 0.7583203 & 0.5077784 & 0.0218490 & 0.0451777\\
-		2 & 0.7535556 & 0.4981009 & 0.0216224 & 0.0439617\\
-		\rowcolor{gray!6}  5 & 0.7956132 & 0.5810591 & 0.0202191 & 0.0417847\\
-		10 & 0.7993774 & 0.5877563 & 0.0228967 & 0.0477935\\
-		\rowcolor{gray!6}  15 & 0.8021971 & 0.5937258 & 0.0229241 & 0.0476222\\
+		\rowcolor{gray!6}  1 & 0.7583 & 0.5077 & 0.0218 & 0.0451\\
+		2 & 0.7535 & 0.4981 & 0.0216 & 0.0439\\
+		\rowcolor{gray!6}  5 & 0.7956 & 0.5810 & 0.0202 & 0.0417\\
+		10 & 0.7993 & 0.5877 & 0.0228 & 0.0477\\
+		\rowcolor{gray!6}  15 & 0.8021 & 0.5937 & 0.0229 & 0.0476\\
 		\addlinespace
-		20 & 0.8033252 & 0.5959767 & 0.0204760 & 0.0428055\\
-		\rowcolor{gray!6}  30 & 0.8049545 & 0.5995533 & 0.0209553 & 0.0434628\\
-		50 & 0.8124159 & 0.6144606 & 0.0209855 & 0.0437144\\
-		\rowcolor{gray!6}  60 & 0.8122281 & 0.6140509 & 0.0206854 & 0.0430537\\
-		70 & 0.8127294 & 0.6149712 & 0.0209825 & 0.0437856\\
+		20 & 0.8033 & 0.5959 & 0.0204 & 0.0428\\
+		\rowcolor{gray!6}  30 & 0.8049 & 0.5995 & 0.0209 & 0.0434\\
+		50 & 0.8124 & 0.6144 & 0.0209 & 0.0437\\
+		\rowcolor{gray!6}  60 & 0.8122 & 0.6140 & 0.0206 & 0.0430\\
+		70 & 0.8127 & 0.6149 & 0.0209 & 0.0437\\
 		\addlinespace
-		\rowcolor{gray!6}  80 & 0.8096591 & 0.6085439 & 0.0224092 & 0.0466400\\
+		\rowcolor{gray!6}  80 & 0.8096 & 0.6085 & 0.0224 & 0.0466\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -92,27 +92,27 @@ clase mayoritaria (56\%)
 		\toprule
 		\rowcolor{black}  \multicolumn{1}{c}{\textcolor{white}{\textbf{metricas}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{valor}}}\\
 		\midrule
-		\rowcolor{gray!6}  Accuracy & 0.8024872\\
-		Kappa & 0.5953182\\
-		\rowcolor{gray!6}  AccuracyLower & 0.7803760\\
-		AccuracyUpper & 0.8232897\\
-		\rowcolor{gray!6}  AccuracyNull & 0.5610827\\
+		\rowcolor{gray!6}  Accuracy & 0.8024\\
+		Kappa & 0.5953\\
+		\rowcolor{gray!6}  AccuracyLower & 0.7803\\
+		AccuracyUpper & 0.8232\\
+		\rowcolor{gray!6}  AccuracyNull & 0.5610\\
 		\addlinespace
-		AccuracyPValue & 0.0000000\\
-		\rowcolor{gray!6}  McnemarPValue & 0.0028633\\
-		Sensitivity & 0.7333333\\
-		\rowcolor{gray!6}  Specificity & 0.8565841\\
-		Pos Pred Value & 0.8000000\\
+		AccuracyPValue & 0.0000\\
+		\rowcolor{gray!6}  McnemarPValue & 0.0028\\
+		Sensitivity & 0.7333\\
+		\rowcolor{gray!6}  Specificity & 0.8565\\
+		Pos Pred Value & 0.8000\\
 		\addlinespace
-		\rowcolor{gray!6}  Neg Pred Value & 0.8041616\\
-		Precision & 0.8000000\\
-		\rowcolor{gray!6}  Recall & 0.7333333\\
-		F1 & 0.7652174\\
-		\rowcolor{gray!6}  Prevalence & 0.4389173\\
+		\rowcolor{gray!6}  Neg Pred Value & 0.8041\\
+		Precision & 0.8000\\
+		\rowcolor{gray!6}  Recall & 0.7333\\
+		F1 & 0.7652\\
+		\rowcolor{gray!6}  Prevalence & 0.4389\\
 		\addlinespace
-		Detection Rate & 0.3218727\\
-		\rowcolor{gray!6}  Detection Prevalence & 0.4023409\\
-		Balanced Accuracy & 0.7949587\\
+		Detection Rate & 0.3218\\
+		\rowcolor{gray!6}  Detection Prevalence & 0.4023\\
+		Balanced Accuracy & 0.7949\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -136,7 +136,7 @@ encuentra).
 \subsubsection{Determinar parámetros del modelo}
 %-------------------------------------------------%
 No existen hiperparámetros. Como en este caso se utiliza el paquete glm,
-hay que determinar que se realiza una una regresión logística indicando
+hay que determinar que se realiza una regresión logística indicando
 que el paquete utilice la familia binomial.
 
 
@@ -185,27 +185,27 @@ buen modelo para tener en cuenta y analizarlo mas en profundidad.
 		\toprule
 		\rowcolor{black}  \multicolumn{1}{c}{\textcolor{white}{\textbf{metricas}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{valor}}}\\
 		\midrule
-		\rowcolor{gray!6}  Accuracy & 0.8354060\\
-		Kappa & 0.6599634\\
-		\rowcolor{gray!6}  AccuracyLower & 0.8146669\\
-		AccuracyUpper & 0.8546916\\
-		\rowcolor{gray!6}  AccuracyNull & 0.5610827\\
+		\rowcolor{gray!6}  Accuracy & 0.8354\\
+		Kappa & 0.6599\\
+		\rowcolor{gray!6}  AccuracyLower & 0.8146\\
+		AccuracyUpper & 0.8546\\
+		\rowcolor{gray!6}  AccuracyNull & 0.5610\\
 		\addlinespace
-		AccuracyPValue & 0.0000000\\
-		\rowcolor{gray!6}  McnemarPValue & 0.0000000\\
-		Sensitivity & 0.7333333\\
-		\rowcolor{gray!6}  Specificity & 0.9152542\\
-		Pos Pred Value & 0.8712871\\
+		AccuracyPValue & 0.0000\\
+		\rowcolor{gray!6}  McnemarPValue & 0.0000\\
+		Sensitivity & 0.7333\\
+		\rowcolor{gray!6}  Specificity & 0.9152\\
+		Pos Pred Value & 0.8712\\
 		\addlinespace
-		\rowcolor{gray!6}  Neg Pred Value & 0.8143852\\
-		Precision & 0.8712871\\
-		\rowcolor{gray!6}  Recall & 0.7333333\\
-		F1 & 0.7963801\\
-		\rowcolor{gray!6}  Prevalence & 0.4389173\\
+		\rowcolor{gray!6}  Neg Pred Value & 0.8143\\
+		Precision & 0.8712\\
+		\rowcolor{gray!6}  Recall & 0.7333\\
+		F1 & 0.7963\\
+		\rowcolor{gray!6}  Prevalence & 0.4389\\
 		\addlinespace
-		Detection Rate & 0.3218727\\
-		\rowcolor{gray!6}  Detection Prevalence & 0.3694221\\
-		Balanced Accuracy & 0.8242938\\
+		Detection Rate & 0.3218\\
+		\rowcolor{gray!6}  Detection Prevalence & 0.3694\\
+		Balanced Accuracy & 0.8242\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -273,27 +273,27 @@ que en entrenamiento (82.6\%). \ref{tab:MatrizConf_LDA} \ref{tab:metricas_LDA}
 		\toprule
 		\rowcolor{black}  \multicolumn{1}{c}{\textcolor{white}{\textbf{metricas}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{valor}}}\\
 		\midrule
-		\rowcolor{gray!6}  Accuracy & 0.8266277\\
-		Kappa & 0.6407669\\
-		\rowcolor{gray!6}  AccuracyLower & 0.8054978\\
-		AccuracyUpper & 0.8463428\\
-		\rowcolor{gray!6}  AccuracyNull & 0.5610827\\
+		\rowcolor{gray!6}  Accuracy & 0.8266\\
+		Kappa & 0.6407\\
+		\rowcolor{gray!6}  AccuracyLower & 0.8054\\
+		AccuracyUpper & 0.8463\\
+		\rowcolor{gray!6}  AccuracyNull & 0.5610\\
 		\addlinespace
-		AccuracyPValue & 0.0000000\\
-		\rowcolor{gray!6}  McnemarPValue & 0.0000000\\
-		Sensitivity & 0.7100000\\
-		\rowcolor{gray!6}  Specificity & 0.9178618\\
-		Pos Pred Value & 0.8711656\\
+		AccuracyPValue & 0.0000\\
+		\rowcolor{gray!6}  McnemarPValue & 0.0000\\
+		Sensitivity & 0.7100\\
+		\rowcolor{gray!6}  Specificity & 0.9178\\
+		Pos Pred Value & 0.8711\\
 		\addlinespace
-		\rowcolor{gray!6}  Neg Pred Value & 0.8018223\\
-		Precision & 0.8711656\\
-		\rowcolor{gray!6}  Recall & 0.7100000\\
-		F1 & 0.7823691\\
-		\rowcolor{gray!6}  Prevalence & 0.4389173\\
+		\rowcolor{gray!6}  Neg Pred Value & 0.8018\\
+		Precision & 0.8711\\
+		\rowcolor{gray!6}  Recall & 0.7100\\
+		F1 & 0.7823\\
+		\rowcolor{gray!6}  Prevalence & 0.4389\\
 		\addlinespace
-		Detection Rate & 0.3116313\\
-		\rowcolor{gray!6}  Detection Prevalence & 0.3577176\\
-		Balanced Accuracy & 0.8139309\\
+		Detection Rate & 0.3116\\
+		\rowcolor{gray!6}  Detection Prevalence & 0.3577\\
+		Balanced Accuracy & 0.8139\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -376,27 +376,27 @@ Evaluando el árbol con el conjunto de test, se obtiene un 83,24 \% de Accuracy.
 		\toprule
 		\rowcolor{black}  \multicolumn{1}{c}{\textcolor{white}{\textbf{metricas}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{valor}}}\\
 		\midrule
-		\rowcolor{gray!6}  Accuracy & 0.8324799\\
-		Kappa & 0.6582093\\
-		\rowcolor{gray!6}  AccuracyLower & 0.8116084\\
-		AccuracyUpper & 0.8519108\\
-		\rowcolor{gray!6}  AccuracyNull & 0.5610827\\
+		\rowcolor{gray!6}  Accuracy & 0.8324\\
+		Kappa & 0.6582\\
+		\rowcolor{gray!6}  AccuracyLower & 0.8116\\
+		AccuracyUpper & 0.8519\\
+		\rowcolor{gray!6}  AccuracyNull & 0.5610\\
 		\addlinespace
-		AccuracyPValue & 0.0000000\\
-		\rowcolor{gray!6}  McnemarPValue & 0.0857732\\
-		Sensitivity & 0.7866667\\
-		\rowcolor{gray!6}  Specificity & 0.8683181\\
-		Pos Pred Value & 0.8237347\\
+		AccuracyPValue & 0.0000\\
+		\rowcolor{gray!6}  McnemarPValue & 0.0857\\
+		Sensitivity & 0.7866\\
+		\rowcolor{gray!6}  Specificity & 0.8683\\
+		Pos Pred Value & 0.8237\\
 		\addlinespace
-		\rowcolor{gray!6}  Neg Pred Value & 0.8387909\\
-		Precision & 0.8237347\\
-		\rowcolor{gray!6}  Recall & 0.7866667\\
-		F1 & 0.8047741\\
-		\rowcolor{gray!6}  Prevalence & 0.4389173\\
+		\rowcolor{gray!6}  Neg Pred Value & 0.8387\\
+		Precision & 0.8237\\
+		\rowcolor{gray!6}  Recall & 0.7866\\
+		F1 & 0.8047\\
+		\rowcolor{gray!6}  Prevalence & 0.4389\\
 		\addlinespace
-		Detection Rate & 0.3452816\\
-		\rowcolor{gray!6}  Detection Prevalence & 0.4191661\\
-		Balanced Accuracy & 0.8274924\\
+		Detection Rate & 0.3452\\
+		\rowcolor{gray!6}  Detection Prevalence & 0.4191\\
+		Balanced Accuracy & 0.8274\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -430,9 +430,6 @@ hiperparámetros:
 	\item
 	splitrule: criterio de división. El criterio elegido es ``gini''.
 \end{itemize}
-
-Para este estudio, se determinó una grilla que contiene con todas las
-combinaciones posibles entre los valores anteriores.
 
 El mejor modelo determinado queda con los siguientes parámetros: mtry=5,
 splitrule=gini y
@@ -506,27 +503,27 @@ corrida se obtiene un accuracy de 83.83\% \ref{tab:MatrizConf_rf} \ref{tab:metri
 		\toprule
 		\rowcolor{black}  \multicolumn{1}{c}{\textcolor{white}{\textbf{metricas}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{valor}}}\\
 		\midrule
-		\rowcolor{gray!6}  Accuracy & 0.8383321\\
-		Kappa & 0.6688211\\
-		\rowcolor{gray!6}  AccuracyLower & 0.8177277\\
-		AccuracyUpper & 0.8574701\\
-		\rowcolor{gray!6}  AccuracyNull & 0.5610827\\
+		\rowcolor{gray!6}  Accuracy & 0.8383\\
+		Kappa & 0.6688\\
+		\rowcolor{gray!6}  AccuracyLower & 0.8177\\
+		AccuracyUpper & 0.8574\\
+		\rowcolor{gray!6}  AccuracyNull & 0.5610\\
 		\addlinespace
-		AccuracyPValue & 0.0000000\\
-		\rowcolor{gray!6}  McnemarPValue & 0.0012430\\
-		Sensitivity & 0.7750000\\
-		\rowcolor{gray!6}  Specificity & 0.8878748\\
-		Pos Pred Value & 0.8439201\\
+		AccuracyPValue & 0.0000\\
+		\rowcolor{gray!6}  McnemarPValue & 0.0012\\
+		Sensitivity & 0.7750\\
+		\rowcolor{gray!6}  Specificity & 0.8878\\
+		Pos Pred Value & 0.8439\\
 		\addlinespace
-		\rowcolor{gray!6}  Neg Pred Value & 0.8345588\\
-		Precision & 0.8439201\\
-		\rowcolor{gray!6}  Recall & 0.7750000\\
-		F1 & 0.8079930\\
-		\rowcolor{gray!6}  Prevalence & 0.4389173\\
+		\rowcolor{gray!6}  Neg Pred Value & 0.8345\\
+		Precision & 0.8439\\
+		\rowcolor{gray!6}  Recall & 0.7750\\
+		F1 & 0.8079\\
+		\rowcolor{gray!6}  Prevalence & 0.4389\\
 		\addlinespace
-		Detection Rate & 0.3401609\\
-		\rowcolor{gray!6}  Detection Prevalence & 0.4030724\\
-		Balanced Accuracy & 0.8314374\\
+		Detection Rate & 0.3401\\
+		\rowcolor{gray!6}  Detection Prevalence & 0.4030\\
+		Balanced Accuracy & 0.8314\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -538,7 +535,7 @@ corrida se obtiene un accuracy de 83.83\% \ref{tab:MatrizConf_rf} \ref{tab:metri
 
 Boosting es una de las estrategias que hay de ensemble que se pueden
 aplicar a muchos métodos, entre ellos los árboles. Boosting ajusta de
-forma secuencia múltiples modelos en cadena. Cada nuevo modelo emplea
+forma secuencial múltiples modelos en cadena. Cada nuevo modelo emplea
 información del modelo anterior para aprender de sus errores, mejorando
 iteración a iteración. Este método utiliza todos los features en todos los modelos.
 
@@ -558,7 +555,7 @@ pueden emplear los siguientes:
 	sobreajuste. Se prueban los siguientes valores: 100, 500, 1000, 2000.
 	\item
 	interaction.depth: complejidad de los árboles (cantidad total de
-	divisiones que tiene el árbol). Se preuban los sigientes valores: 1,
+	divisiones que tiene el árbol). Se prueban los siguientes valores: 1,
 	5, 9.
 	\item
 	shrinkage: (learning rate) controla la influencia que tiene cada modelo
@@ -576,11 +573,7 @@ pueden emplear los siguientes:
 	defecto su valor es de 0.5. Se utiliza valor por defecto.
 \end{itemize}
 
-Se genera una grilla que contempla todas las combinaciones posibles de
-los valores mencionados anteriormente. Por cada combinación se generan
-una cantidad igual a particiones*repeticiones.
-
-Todos los resultados dan muy similar. La combinación de hiperparámetros
+La combinación de hiperparámetros
 que por una escasa diferencia sobrepasa al resto, es: n.trees = 500,
 interaction.depth = 9, shrinkage = 0.01 y n.minobsinnode = 10
 
@@ -634,27 +627,27 @@ Se evalúa el modelo con el conjunto de Test. En esta oportunidad se obtiene  Ac
 		\toprule
 		\rowcolor{black}  \multicolumn{1}{c}{\textcolor{white}{\textbf{metricas}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{valor}}}\\
 		\midrule
-		\rowcolor{gray!6}  Accuracy & 0.8361375\\
-		Kappa & 0.6645097\\
-		\rowcolor{gray!6}  AccuracyLower & 0.8154319\\
-		AccuracyUpper & 0.8553864\\
-		\rowcolor{gray!6}  AccuracyNull & 0.5610827\\
+		\rowcolor{gray!6}  Accuracy & 0.8361\\
+		Kappa & 0.6645\\
+		\rowcolor{gray!6}  AccuracyLower & 0.8154\\
+		AccuracyUpper & 0.8553\\
+		\rowcolor{gray!6}  AccuracyNull & 0.5610\\
 		\addlinespace
-		AccuracyPValue & 0.0000000\\
-		\rowcolor{gray!6}  McnemarPValue & 0.0026411\\
-		Sensitivity & 0.7750000\\
-		\rowcolor{gray!6}  Specificity & 0.8839635\\
-		Pos Pred Value & 0.8393502\\
+		AccuracyPValue & 0.0000\\
+		\rowcolor{gray!6}  McnemarPValue & 0.0026\\
+		Sensitivity & 0.7750\\
+		\rowcolor{gray!6}  Specificity & 0.8839\\
+		Pos Pred Value & 0.8393\\
 		\addlinespace
-		\rowcolor{gray!6}  Neg Pred Value & 0.8339483\\
-		Precision & 0.8393502\\
-		\rowcolor{gray!6}  Recall & 0.7750000\\
-		F1 & 0.8058925\\
-		\rowcolor{gray!6}  Prevalence & 0.4389173\\
+		\rowcolor{gray!6}  Neg Pred Value & 0.8339\\
+		Precision & 0.8393\\
+		\rowcolor{gray!6}  Recall & 0.7750\\
+		F1 & 0.8058\\
+		\rowcolor{gray!6}  Prevalence & 0.4389\\
 		\addlinespace
-		Detection Rate & 0.3401609\\
-		\rowcolor{gray!6}  Detection Prevalence & 0.4052670\\
-		Balanced Accuracy & 0.8294817\\
+		Detection Rate & 0.3401\\
+		\rowcolor{gray!6}  Detection Prevalence & 0.4052\\
+		Balanced Accuracy & 0.8294\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -737,27 +730,27 @@ Evaluando en el conjunto de Test se obtiene 84.2\% de Accuracy. Es el Modelo que
 		\toprule
 		\rowcolor{black}  \multicolumn{1}{c}{\textcolor{white}{\textbf{metricas}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{valor}}}\\
 		\midrule
-		\rowcolor{gray!6}  Accuracy & 0.8419898\\
-		Kappa & 0.6732633\\
-		\rowcolor{gray!6}  AccuracyLower & 0.8215568\\
-		AccuracyUpper & 0.8609401\\
-		\rowcolor{gray!6}  AccuracyNull & 0.5610827\\
+		\rowcolor{gray!6}  Accuracy & 0.8419\\
+		Kappa & 0.6732\\
+		\rowcolor{gray!6}  AccuracyLower & 0.8215\\
+		AccuracyUpper & 0.8609\\
+		\rowcolor{gray!6}  AccuracyNull & 0.5610\\
 		\addlinespace
-		AccuracyPValue & 0.0000000\\
-		\rowcolor{gray!6}  McnemarPValue & 0.0000000\\
-		Sensitivity & 0.7366667\\
-		\rowcolor{gray!6}  Specificity & 0.9243807\\
-		Pos Pred Value & 0.8840000\\
+		AccuracyPValue & 0.0000\\
+		\rowcolor{gray!6}  McnemarPValue & 0.0000\\
+		Sensitivity & 0.7366\\
+		\rowcolor{gray!6}  Specificity & 0.9243\\
+		Pos Pred Value & 0.8840\\
 		\addlinespace
-		\rowcolor{gray!6}  Neg Pred Value & 0.8177624\\
-		Precision & 0.8840000\\
-		\rowcolor{gray!6}  Recall & 0.7366667\\
-		F1 & 0.8036364\\
-		\rowcolor{gray!6}  Prevalence & 0.4389173\\
+		\rowcolor{gray!6}  Neg Pred Value & 0.8177\\
+		Precision & 0.8840\\
+		\rowcolor{gray!6}  Recall & 0.7366\\
+		F1 & 0.8036\\
+		\rowcolor{gray!6}  Prevalence & 0.4389\\
 		\addlinespace
-		Detection Rate & 0.3233358\\
-		\rowcolor{gray!6}  Detection Prevalence & 0.3657644\\
-		Balanced Accuracy & 0.8305237\\
+		Detection Rate & 0.3233\\
+		\rowcolor{gray!6}  Detection Prevalence & 0.3657\\
+		Balanced Accuracy & 0.8305\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -792,8 +785,7 @@ RandomForest.
 \subsubsection{Determinar parámetros del modelo}
 %-------------------------------------------------%
 
-Las grillas de pruebas de parámetros es igual para cada modelo que los
-mencionados anteriormente en las secciones de cada modelo por separado.
+Las grillas de pruebas son, para cada modelo, las mismas utilizadas oportunamente.\\
 
 Se detallan los nuevos parámetros óptimos encontrados: 
 RandomForest: mtry = 3, splitrule = gini y min.node.size = 30\\
@@ -821,7 +813,7 @@ Los Nuevos Valores correspondinetes a la métrica Accuracy en los modelos de reg
 %-------------------------------------------------%
 
 En este caso, se quieren evaluar algunos métodos pero sin tener en cuenta la variable mas importante ``ciclo\_lectivo\_de\_cursada''.\\
-Al modificar los datos de entrada, se realiza un nuevo análisis sobre selección de features sin tener en cuenta la variable mencionada. Este análisis determina que para obtener el mejor resultado evaluando la métrica accuracy, deben utilizarse todos los predictores disponibles. \\
+Al modificar los datos de entrada, se realiza un nuevo análisis sobre selección de features sin tener en cuenta la variable mencionada. Este análisis determina que para obtener el mejor resultado evaluando la métrica accuracy, deben utilizarse todo el resto de los predictores disponibles. \\
 
 %En este caso, debido al estudio de variables \ref{analisis-var_importantes} y como se mencionó en \ref{conjunto_datos}
 
@@ -832,8 +824,7 @@ Se seleccionaron 5 métodos, para este nuevo análisis: Regresión logística, R
 \subsubsection{Determinar parámetros del modelo}
 %-------------------------------------------------%
 
-Las grillas de pruebas de parámetros es igual para cada modelo que los
-mencionados anteriormente las secciones de cada modelo por separado.
+Las grillas de pruebas son, para cada modelo, las mismas utilizadas oportunamente.
 
 Se detallan los nuevos parámetros óptimos encontrados: 
 RandomForest: mtry = 7, splitrule = gini y min.node.size = 10.

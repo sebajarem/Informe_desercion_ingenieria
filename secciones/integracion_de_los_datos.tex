@@ -148,7 +148,7 @@ En la tabla \ref{tab:top_10_rfe_accuracy} se detallan los mejores 10 modelos obt
 ``ciclo\_lectivo\_de\_cursada",``tipo\_de\_aprobacion\_libre", ``Turno\_Noche", ``tipo\_de\_aprobacion\_no\_firmo", ``Aprobado", ``Turno\_Tarde", ``Nota\_max\_prom", ``tipo\_de\_aprobacion\_firmo", ``Turno\_Manana" y ``cant\_resursada\_regular".\\
 
 Asimismo, en la figura \ref{fig:rfe_evolucion_accuracy} se puede observar la evolución de la métrica accuracy en función de la cantidad de variables que toma el modelo. La dispersión en este caso está asociado a los distintos valores de accuracy que tiene cada modelo ejecutado en cross validation como así también está contemplado todas las combinaciones de variables posibles con la cantidad que marca el eje x.\\
-Ademas de que al usar menos variables se necesita menos poder de computo, es más fácil la interpretación que se podrá hacer y tendremos una menor dispersión final.
+Además de que al usar menos variables se necesita menos poder de computo, es más fácil la interpretación que se podrá hacer y tendremos una menor dispersión final.
 
 \begin{table}[!h]
 	
@@ -182,7 +182,7 @@ Ademas de que al usar menos variables se necesita menos poder de computo, es má
 \end{figure}
 
 \paragraph{\underline{influencia de variables:}}
-Tras ajustar cada uno de estos modelos, se recalcula la influencia de cada variable. De esta forma, para cada tamaño de modelo, se obtiene un ranking de la importancia promedio de las variables. Los resultados se pueden observar en \ref{tab:tf_rfe_influencia_variables} y \ref{fig:rfe_influencia_var} donde existe una variable que claramente influye mucho mas en los resultados en comparación con los otros predictores.
+Tras ajustar cada uno de estos modelos, se recalcula la influencia de cada variable. De esta forma, para cada tamaño de modelo, se obtiene un ranking de la importancia promedio de las variables. Los resultados se pueden observar en \ref{tab:tf_rfe_influencia_variables} y \ref{fig:rfe_influencia_var} donde existe una variable que claramente influye mucho más en los resultados en comparación con los otros predictores.
 
 \begin{table}[!h]
 	
@@ -192,19 +192,19 @@ Tras ajustar cada uno de estos modelos, se recalcula la influencia de cada varia
 		\toprule
 		\rowcolor{black}  \multicolumn{1}{c}{\textcolor{white}{\textbf{var}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{media\_influencia}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{sd\_influencia}}}\\
 		\midrule
-		\rowcolor{gray!6}  ciclo\_lectivo\_de\_cursada & 89.84029 & 2.9668673\\
-		tipo\_de\_aprobacion\_libre & 46.34285 & 2.2575528\\
-		\rowcolor{gray!6}  Turno\_Noche & 38.07504 & 1.7175035\\
-		tipo\_de\_aprobacion\_no\_firmo & 38.05189 & 1.5399760\\
-		\rowcolor{gray!6}  Aprobado & 35.80734 & 1.1307306\\
+		\rowcolor{gray!6}  ciclo\_lectivo\_de\_cursada & 89.84 & 2.97\\
+		tipo\_de\_aprobacion\_libre & 46.34 & 2.26\\
+		\rowcolor{gray!6}  Turno\_Noche & 38.08 & 1.72\\
+		tipo\_de\_aprobacion\_no\_firmo & 38.05 & 1.54\\
+		\rowcolor{gray!6}  Aprobado & 35.81 & 1.13\\
 		\addlinespace
-		Turno\_Tarde & 35.67467 & 1.5035133\\
-		\rowcolor{gray!6}  tipo\_de\_aprobacion\_firmo & 35.28770 & 0.6960169\\
-		Nota\_max\_prom & 35.14407 & 2.3991503\\
-		\rowcolor{gray!6}  Turno\_Manana & 34.30645 & 1.5999039\\
-		cant\_resursada\_regular & 32.25476 & 1.1929776\\
+		Turno\_Tarde & 35.67 & 1.50\\
+		\rowcolor{gray!6}  tipo\_de\_aprobacion\_firmo & 35.29 & 0.69\\
+		Nota\_max\_prom & 35.14 & 2.40\\
+		\rowcolor{gray!6}  Turno\_Manana & 34.31 & 1.60\\
+		cant\_resursada\_regular & 32.25 & 1.19\\
 		\addlinespace
-		\rowcolor{gray!6}  edad\_al\_ingreso & 31.90459 & 0.1024266\\
+		\rowcolor{gray!6}  edad\_al\_ingreso & 31.90 & 0.10\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -229,7 +229,7 @@ Se utiliza la misma técnica anterior de múltiples evaluaciones con  modelos de
 
 En la tabla \ref{tab:top_10_rfe_accuracy_datasetAlternativa2} se detallan los mejores 10 modelos obtenidos a partir de todas las combinaciones posibles. El mejor modelo a juzgar por la métrica Accuracy es el que se entrena con todos los predictores disponibles.
 
-Asimismo, en la figura \ref{fig:rfe_evolucion_accuracy_datasetAlternativa2} se puede observar la evolución de la mátrica accuracy en función de la cantidad de variables que toma el modelo. La dispersión en este caso está asociado a los distintos valores de accuracy que tiene cada modelo ejecutado en cross validation como así también está contemplado todas las combinaciones de variables posibles con la cantidad que marca el eje x.\\
+Asimismo, en la figura \ref{fig:rfe_evolucion_accuracy_datasetAlternativa2} se puede observar la evolución de la métrica accuracy en función de la cantidad de variables que toma el modelo. La dispersión en este caso está asociado a los distintos valores de accuracy que tiene cada modelo ejecutado en cross validation como así también está contemplado todas las combinaciones de variables posibles con la cantidad que marca el eje x.\\
 Se puede observar que desde que la cantidad de variables es 15, el Accuracy obtenido es un valor muy próximo al máximo que se consigue con 23 variables. Por lo que, si se opta por este dataset y se lo quisiera explicar quizas sería mas sencillo con menos variables aunque sigue siendo una cantidad considerablemente alta para extraer conclusiones sencillas y dependerá mucho de la interacción entre ellas.\\
 
 
@@ -278,33 +278,33 @@ importancia promedio de las variables. Los resultados se pueden observar en \ref
 		\toprule
 		\rowcolor{black}  \multicolumn{1}{c}{\textcolor{white}{\textbf{var}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{media\_influencia}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{sd\_influencia}}}\\
 		\midrule
-		\rowcolor{gray!6}  tipo\_de\_aprobacion\_libre & 50.79648 & 2.5524875\\
-		Turno\_Tarde & 44.59747 & 0.8908022\\
-		\rowcolor{gray!6}  Turno\_Noche & 43.09091 & 1.1487629\\
-		tipo\_de\_aprobacion\_no\_firmo & 42.65281 & 1.5211102\\
-		\rowcolor{gray!6}  Aprobado & 42.15115 & 2.1368377\\
+		\rowcolor{gray!6}  tipo\_de\_aprobacion\_libre & 50.79 & 2.55\\
+		Turno\_Tarde & 44.60 & 0.89\\
+		\rowcolor{gray!6}  Turno\_Noche & 43.09 & 1.15\\
+		tipo\_de\_aprobacion\_no\_firmo & 42.65 & 1.52\\
+		\rowcolor{gray!6}  Aprobado & 42.15 & 2.14\\
 		\addlinespace
-		tipo\_de\_aprobacion\_firmo & 40.75425 & 1.1106366\\
-		\rowcolor{gray!6}  Turno\_Manana & 40.69317 & 1.9193145\\
-		Nota\_max\_prom & 40.54109 & 1.7290803\\
-		\rowcolor{gray!6}  cant\_recursada\_regular\_No\_Recurso & 36.59649 & 1.7624988\\
-		cant\_resursada\_regular & 36.06834 & 1.6028767\\
+		tipo\_de\_aprobacion\_firmo & 40.75 & 1.11\\
+		\rowcolor{gray!6}  Turno\_Manana & 40.69 & 1.91\\
+		Nota\_max\_prom & 40.54 & 1.72\\
+		\rowcolor{gray!6}  cant\_recursada\_regular\_No\_Recurso & 36.59 & 1.76\\
+		cant\_resursada\_regular & 36.06 & 1.60\\
 		\addlinespace
-		\rowcolor{gray!6}  edad\_al\_ingreso & 34.36706 & 2.0057595\\
-		cant\_recursada\_regular\_Recurso1vez & 33.45997 & 1.0793458\\
-		\rowcolor{gray!6}  noAprobado & 32.05701 & 1.4956207\\
-		tipo\_de\_aprobacion\_cambio\_curso & 32.04880 & 1.2241621\\
-		\rowcolor{gray!6}  tipo\_de\_aprobacion\_promociono & 30.37739 & 0.4212574\\
+		\rowcolor{gray!6}  edad\_al\_ingreso & 34.36 & 2.01\\
+		cant\_recursada\_regular\_Recurso1vez & 33.46 & 1.08\\
+		\rowcolor{gray!6}  noAprobado & 32.05 & 1.49\\
+		tipo\_de\_aprobacion\_cambio\_curso & 32.04 & 1.22\\
+		\rowcolor{gray!6}  tipo\_de\_aprobacion\_promociono & 30.37 & 0.42\\
 		\addlinespace
-		Promociono & 30.31098 & 1.9463734\\
-		\rowcolor{gray!6}  Nota & 30.01460 & 1.9773123\\
-		EsTecnico\_X1 & 24.08818 & 1.1924095\\
-		\rowcolor{gray!6}  cant\_recursada\_regular\_Recurso2vez & 23.93968 & 1.2196074\\
-		Sexo\_M & 18.84818 & 2.2983891\\
+		Promociono & 30.31 & 1.94\\
+		\rowcolor{gray!6}  Nota & 30.01 & 1.97\\
+		EsTecnico\_X1 & 24.08 & 1.19\\
+		\rowcolor{gray!6}  cant\_recursada\_regular\_Recurso2vez & 23.94 & 1.22\\
+		Sexo\_M & 18.85 & 2.29\\
 		\addlinespace
-		\rowcolor{gray!6}  cant\_recursada\_regular\_Recurso3vez & 17.05511 & 1.4083702\\
-		EsTecnico\_SinDato & 16.70716 & 1.3843021\\
-		\rowcolor{gray!6}  cant\_recursada\_regular\_Recurso4vez & 13.33266 & 1.3074133\\
+		\rowcolor{gray!6}  cant\_recursada\_regular\_Recurso3vez & 17.05 & 1.40\\
+		EsTecnico\_SinDato & 16.70 & 1.38\\
+		\rowcolor{gray!6}  cant\_recursada\_regular\_Recurso4vez & 13.33 & 1.30\\
 		\bottomrule
 	\end{tabular}
 \end{table}
