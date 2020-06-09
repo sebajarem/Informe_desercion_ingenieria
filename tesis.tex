@@ -1,13 +1,19 @@
-\documentclass[11pt,a4paper,twoside]{tesis}
+%\documentclass[11pt,a4paper,twoside]{tesis}
 % SI NO PENSAS IMPRIMIRLO EN FORMATO LIBRO PODES USAR
-%\documentclass[11pt,a4paper]{tesis}
+\documentclass[11pt,a4paper]{tesis}
 
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish, english]{babel}
+%\usepackage[spanish]{babel}
 \usepackage[left=3cm,right=3cm,bottom=3.5cm,top=3.5cm]{geometry}
 \usepackage[usenames]{color}
 \usepackage{hyperref}
+
+% particion de palabras fin de renglón
+\hyphenpenalty=1000 % para que no haya particion
+\exhyphenpenalty=1000 %para que no haya particion
+\input{configuraciones_paquetes_comandos/particion_palabras} %palabra por palabra
 
 %configuraciones especiales de paquetes
 \input{configuraciones_paquetes_comandos/todolist}
@@ -298,6 +304,6 @@
 }
 
 %%%% TODO LIST
-\listoftodos
+%\listoftodos
 
 \end{document}
