@@ -580,7 +580,7 @@ interaction.depth = 9, shrinkage = 0.01 y n.minobsinnode = 10
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics{imagenes/modelos_varios/unnamed-chunk-28-1.pdf}
+	\includegraphics[width=0.9\textwidth]{imagenes/modelos_varios/unnamed-chunk-28-1.pdf}
 	%\includegraphics[width=0.25\textwidth]{mesh}
 	\caption{Evolución de Accuracy en modelos Gradient Boosting para determinar hiperparámetros}
 	\label{fig:rf_hiperparam}
@@ -678,13 +678,13 @@ Se utiliza el paquete kernlab que tiene 2 hiperparámetros:
 Los mejores resultados a través de las iteraciones de los modelos
 generados fue con los valores: sigma = 0.001 y C = 100. Los mismos se
 contrastan con los valores de Accuracy obtenidos en cada modelo y cuya
-evolución puede verse en el grafico x.
+evolución puede verse en el grafico \ref{fig:svm_hiperparam}.
 
 
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics{imagenes/modelos_varios/unnamed-chunk-32-1.pdf}
+	\includegraphics[width=0.78\textwidth]{imagenes/modelos_varios/unnamed-chunk-32-1.pdf}
 	%\includegraphics[width=0.25\textwidth]{mesh}
 	\caption{Evolución de Accuracy en modelos SVM para determinar hiperparámetros}
 	\label{fig:svm_hiperparam}
@@ -705,22 +705,6 @@ En entrenamiento se consigue un Accuracy de 83.79\% (con validation) y
 %-------------------------------------------------%
 
 Evaluando en el conjunto de Test se obtiene 84.2\% de Accuracy. Es el Modelo que mejor resultados da con esta métrica y además es robusto. Para mas información del modelo se detalla la Matriz de Confusión \ref{tab:MatrizConf_SVMradial} y Algunas métricas \ref{tab:metricas_SVMradial}.
-
-\begin{table}[!h]
-	
-	\caption{\label{tab:MatrizConf_SVMradial}Matriz de Confusión del método: SVMradial }
-	\centering
-	\begin{tabular}[t]{lcc}
-		\toprule
-		\multicolumn{1}{c}{Prediccion} & \multicolumn{1}{c}{Referencia} & \multicolumn{1}{c}{ } \\
-		\cmidrule(l{3pt}r{3pt}){1-1} \cmidrule(l{3pt}r{3pt}){2-2}
-		\rowcolor{black}  \multicolumn{1}{c}{\textcolor{white}{\textbf{ }}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{0}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{1}}}\\
-		\midrule
-		\rowcolor{gray!6}  0 & 709 & 158\\
-		1 & 58 & 442\\
-		\bottomrule
-	\end{tabular}
-\end{table}
 
 \begin{table}[!h]
 	
@@ -754,6 +738,24 @@ Evaluando en el conjunto de Test se obtiene 84.2\% de Accuracy. Es el Modelo que
 		\bottomrule
 	\end{tabular}
 \end{table}
+
+
+\begin{table}[!h]
+	
+	\caption{\label{tab:MatrizConf_SVMradial}Matriz de Confusión del método: SVMradial }
+	\centering
+	\begin{tabular}[t]{lcc}
+		\toprule
+		\multicolumn{1}{c}{Prediccion} & \multicolumn{1}{c}{Referencia} & \multicolumn{1}{c}{ } \\
+		\cmidrule(l{3pt}r{3pt}){1-1} \cmidrule(l{3pt}r{3pt}){2-2}
+		\rowcolor{black}  \multicolumn{1}{c}{\textcolor{white}{\textbf{ }}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{0}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{1}}}\\
+		\midrule
+		\rowcolor{gray!6}  0 & 709 & 158\\
+		1 & 58 & 442\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
 
 
 \clearpage
