@@ -50,7 +50,7 @@ realizan los estadísticos nuevamente.
 
 \input{tablas/tablon_deserto_est.tex}
 
-
+\FloatBarrier
 
 
 %\includegraphics{Analisis_tablon_baseline_2009_files/figure-latex/unnamed-chunk-12-1.pdf}
@@ -83,7 +83,8 @@ realizan los estadísticos nuevamente.
 	\label{fig:tablon_boxplot_tipoRecursada}
 \end{figure}
 
-\clearpage
+%\clearpage
+\FloatBarrier
 
 \hypertarget{observaciones}{%
 	\paragraph{\textbf{\underline{Observaciones}}}\label{observaciones}}
@@ -209,6 +210,8 @@ Tras ajustar cada uno de estos modelos, se recalcula la influencia de cada varia
 	\end{tabular}
 \end{table}
 
+\FloatBarrier
+
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.9\textwidth]{imagenes/variables/influencia_de_variables-1.pdf}
@@ -217,8 +220,8 @@ Tras ajustar cada uno de estos modelos, se recalcula la influencia de cada varia
 	\label{fig:rfe_influencia_var}
 \end{figure}
 
-\clearpage
-
+%\clearpage
+\FloatBarrier
 
 
 \subsubsection{\textbf{Análisis de Variables Importantes:} Dataset sin Variable ``ciclo\_lectivo\_de\_cursada"}\label{analisis-var_importantes-2}
@@ -270,6 +273,16 @@ De esta forma, para cada tamaño de modelo, se obtiene un ranking de la
 importancia promedio de las variables. Los resultados se pueden observar en \ref{tab:tf_rfe_influencia_variables_23} y \ref{fig:rfe_influencia_var_dsalternativa2}. Se puede observar que la influencia sobre el resultado final ahora es mas equitativo entre las variables.
 
 
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{imagenes/variables/influencia_de_variables_23-1.pdf}
+	%\includegraphics[width=0.25\textwidth]{mesh}
+	\caption{Influencia de las variables más importantes sobre el resultado}
+	\label{fig:rfe_influencia_var_dsalternativa2}
+\end{figure}
+
+\FloatBarrier
+
 \begin{table}[!h]
 	
 	\caption{\label{tab:tf_rfe_influencia_variables_23}Influencia de variables en el resultado}
@@ -310,13 +323,7 @@ importancia promedio de las variables. Los resultados se pueden observar en \ref
 \end{table}
 
 
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.9\textwidth]{imagenes/variables/influencia_de_variables_23-1.pdf}
-	%\includegraphics[width=0.25\textwidth]{mesh}
-	\caption{Influencia de las variables más importantes sobre el resultado}
-	\label{fig:rfe_influencia_var_dsalternativa2}
-\end{figure}
+
 
 
 
